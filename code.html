@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary": "#003351", "surface-container": "#171f33", "on-tertiary-fixed": "#001e2c", "on-primary-fixed": "#07006c", "on-primary-container": "#0d0096", "background": "#0b1326", "on-tertiary-container": "#002d40", "secondary-fixed-dim": "#93ccff", "inverse-surface": "#dae2fd", "error": "#ffb4ab", "primary-fixed-dim": "#c0c1ff", "primary-container": "#8083ff", "on-error-container": "#ffdad6", "on-primary": "#1000a9", "surface-container-lowest": "#060e20", "surface-container-high": "#222a3d", "on-tertiary-fixed-variant": "#004c69", "inverse-on-surface": "#283044", "on-surface-variant": "#c7c4d7", "tertiary-fixed": "#c4e7ff", "outline-variant": "#464554", "on-background": "#dae2fd", "secondary-container": "#3198dc", "inverse-primary": "#494bd6", "on-secondary-fixed-variant": "#004b73", "secondary-fixed": "#cce5ff", "surface-container-highest": "#2d3449", "surface-variant": "#2d3449", "primary": "#c0c1ff", "surface-bright": "#31394d", "on-surface": "#dae2fd", "error-container": "#93000a", "on-secondary-container": "#002c47", "surface-tint": "#c0c1ff", "on-secondary-fixed": "#001d31", "on-error": "#690005", "tertiary": "#7bd0ff", "secondary": "#93ccff", "on-primary-fixed-variant": "#2f2ebe", "outline": "#908fa0", "surface": "#0b1326", "on-tertiary": "#00354a", "surface-container-low": "#131b2e", "tertiary-fixed-dim": "#7bd0ff", "surface-dim": "#0b1326", "tertiary-container": "#009bd1", "primary-fixed": "#e1e0ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "unit-xs": "0.25rem", "grid-margin-mobile": "1rem", "unit-lg": "1.5rem", "unit-xl": "2rem", "unit-sm": "0.5rem", "grid-margin-desktop": "3rem", "unit-3xl": "4.5rem", "grid-margin-tablet": "1.5rem", "grid-gutter-mobile": "0.75rem", "grid-gutter-desktop": "1.5rem", "unit-md": "1rem", "unit-2xl": "3rem", "unit-2xs": "0.125rem" }, "fontFamily": { "headline-sm": ["Space Grotesk"], "body-lg": ["Space Mono"], "headline-md": ["Space Grotesk"], "headline-lg": ["Space Grotesk"], "label-code": ["Space Mono"], "display-hero-mobile": ["Space Grotesk"], "body-sm": ["Space Mono"], "display-hero": ["Space Grotesk"], "label-badge": ["Space Mono"], "headline-lg-mobile": ["Space Grotesk"], "body-md": ["Space Mono"] }, "fontSize": { "headline-sm": ["1.125rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["1rem", { "lineHeight": "1.625rem", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["1.5rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-lg": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.03em", "fontWeight": "700" }], "label-code": ["0.8125rem", { "lineHeight": "1rem", "letterSpacing": "0.05em", "fontWeight": "700" }], "display-hero-mobile": ["2.25rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-sm": ["0.75rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-hero": ["4rem", { "lineHeight": "4.25rem", "letterSpacing": "-0.04em", "fontWeight": "700" }], "label-badge": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.08em", "fontWeight": "700" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.125rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["0.875rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-20 w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop flex items-center justify-between gap-unit-md"><div class="flex items-center gap-unit-md shrink-0"><img alt="Nitin Pandey Brand Monogram" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd6GNyFApAPJ4KOPZPQ10M6WAP3ij-hsWGcLKNsrCICU3Z05vxN0Bp6L75ctMGEGeya7JJcu_8luH70ep1PlrWYl7sPGCHmAGp5_iy2n17ICBji_GU10TsdUS66G2HOGI1nYwMrVnIfz-v0u5rzkCB1sfturow2S_-Y6qG-gpePzcQtwGGycgpo1NH4AVopDOS75-zLFyDT3gUVn59VkMOFhjowtEsh1VyAVNxwBCyORCTc7UcoPTFUg"/><div class="flex flex-col"><div class="flex items-center gap-unit-sm"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase font-bold">Nitin Kumar Pandey</span><span class="hidden xl:inline-block px-unit-xs py-unit-2xs bg-surface-container font-label-badge text-label-badge text-secondary uppercase">SAP S/4HANA</span></div><div class="flex items-center gap-unit-xs"><span class="inline-block w-2 h-2 rounded-full bg-tertiary animate-pulse shadow-[0_0_8px_rgba(123,208,255,0.8)]"></span><span class="font-label-code text-label-code text-tertiary tracking-wider uppercase text-[11px]">Available for Global Opportunities</span></div></div></div><nav class="hidden lg:flex items-center gap-unit-sm" data-active-classes="bg-primary-container text-on-primary-container font-bold"><a aria-current="page" class="px-unit-sm py-unit-xs uppercase tracking-wider transition-all bg-primary-container text-on-primary-container font-bold" data-path="about" href="#about">About</a><a class="px-unit-sm py-unit-xs font-body-sm text-body-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="experience" href="#experience">Experience</a><a class="px-unit-sm py-unit-xs font-body-sm text-body-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="skills" href="#skills">Skills</a><a class="px-unit-sm py-unit-xs font-body-sm text-body-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="projects" href="#projects">Projects</a><a class="px-unit-sm py-unit-xs font-body-sm text-body-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="education" href="#education">Education</a><a class="px-unit-sm py-unit-xs font-body-sm text-body-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="contact" href="#contact">Contact</a></nav><div class="flex items-center gap-unit-sm shrink-0"><a class="hidden sm:inline-flex items-center justify-center px-unit-md py-unit-xs bg-surface-container font-body-sm text-body-sm uppercase text-tertiary hover:bg-tertiary-container hover:text-on-tertiary-container shadow-[0_0_12px_rgba(0,155,209,0.25)] transition-all font-bold" href="#">Download Resume (PDF)</a><a class="inline-flex items-center justify-center px-unit-md py-unit-xs bg-primary-container font-body-sm text-body-sm uppercase text-on-primary-container hover:bg-primary hover:text-on-primary shadow-[0_0_16px_rgba(128,131,255,0.45)] transition-all font-bold" href="#contact">Request Full Access</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Command HUD Controls -->
+<style>
+html[data-theme="light"] { color-scheme: light; }
+html[data-theme="light"] .bg-background { background-color: #f4f7fa !important; }
+html[data-theme="light"] .bg-surface,
+html[data-theme="light"] .bg-surface-container-lowest { background-color: #ffffff !important; }
+html[data-theme="light"] .bg-surface-container-low { background-color: #eef3f7 !important; }
+html[data-theme="light"] .bg-surface-container,
+html[data-theme="light"] .bg-surface-container-high { background-color: #e5edf3 !important; }
+html[data-theme="light"] .bg-surface-container-highest { background-color: #d9e4ec !important; }
+html[data-theme="light"] .text-on-surface,
+html[data-theme="light"] .text-on-background { color: #172536 !important; }
+html[data-theme="light"] .text-on-surface-variant { color: #526579 !important; }
+html[data-theme="light"] .text-outline { color: #64798b !important; }
+html[data-theme="light"] .text-tertiary { color: #087ea4 !important; }
+html[data-theme="light"] .text-secondary { color: #176b9a !important; }
+html[data-theme="light"] .text-primary { color: #4854c7 !important; }
+html[data-theme="light"] .text-secondary-fixed-dim,
+html[data-theme="light"] .text-primary-fixed-dim { color: #315d7b !important; }
+html[data-theme="light"] .border-outline-variant { border-color: #b8c8d4 !important; }
+html[data-theme="light"] .border-tertiary { border-color: #087ea4 !important; }
+html[data-theme="light"] .border-primary { border-color: #4854c7 !important; }
+html[data-theme="light"] .bg-primary-container { background-color: #4854c7 !important; }
+html[data-theme="light"] .text-on-primary-container { color: #ffffff !important; }
+html[data-theme="light"] .text-on-tertiary,
+html[data-theme="light"] .text-on-secondary { color: #ffffff !important; }
+html[data-theme="light"] .bg-secondary { background-color: #176b9a !important; }
+html[data-theme="light"] .bg-tertiary { background-color: #087ea4 !important; }
+html[data-theme="light"] .bg-error-container { background-color: #b42318 !important; }
+html[data-theme="light"] header.bg-surface\/90 {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  border-bottom: 1px solid #c4d0da;
+  box-shadow: 0 1px 10px rgba(23, 37, 54, 0.12) !important;
+}
+html[data-theme="light"] header .text-on-surface-variant { color: #30465a !important; }
+html[data-theme="light"] header .text-tertiary { color: #087ea4 !important; }
+html[data-theme="light"] header .bg-surface-container { background-color: #dce7ef !important; }
+html[data-theme="light"] header nav a { font-weight: 700; }
+</style>
+<div class="fixed top-24 right-4 z-40 flex flex-col items-end gap-2">
+<button class="px-unit-sm py-unit-xs bg-surface-container-high border border-tertiary/50 text-tertiary font-label-code text-label-code uppercase tracking-wider shadow-[0_0_14px_rgba(123,208,255,0.2)] hover:bg-tertiary hover:text-on-tertiary transition-all" onclick="window.portfolioApp.openCommandPalette()">
+<span class="material-symbols-outlined text-[16px] align-middle">terminal</span> [⌘K PALETTE]
+</button>
+<button class="px-unit-sm py-unit-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant font-label-code text-[10px] uppercase tracking-wider hover:text-tertiary transition-all" id="audio-toggle" onclick="window.portfolioApp.toggleAudio()">AUDIO SFX: OFF</button>
+<label class="flex items-center gap-2 px-unit-sm py-unit-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant font-label-code text-[10px] uppercase tracking-wider" for="theme-select">
+<span>THEME</span>
+<select class="bg-transparent text-tertiary outline-none" id="theme-select" onchange="window.portfolioApp.setTheme(this.value)">
+<option value="system">SYSTEM</option>
+<option value="dark">DARK</option>
+<option value="light">LIGHT</option>
+</select>
+</label>
+</div>
+<!-- Top Hero / System Control Matrix -->
+<section class="relative w-full overflow-hidden px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop py-unit-3xl flex flex-col gap-unit-xl">
+<!-- STITCH_SHADER_START:ANIMATION_2 class="absolute inset-0 w-full h-full opacity-65 pointer-events-none -z-10" -->
+<div class="absolute inset-0 w-full h-full opacity-65 pointer-events-none -z-10" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_2" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_2');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+float hash(vec2 p) {
+    return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
+}
+
+float noise(vec2 p) {
+    vec2 i = floor(p);
+    vec2 f = fract(p);
+    vec2 u = f*f*(3.0-2.0*f);
+    return mix(mix(hash(i + vec2(0.0,0.0)), hash(i + vec2(1.0,0.0)), u.x),
+               mix(hash(i + vec2(0.0,1.0)), hash(i + vec2(1.0,1.0)), u.x), u.y);
+}
+
+void main() {
+    vec2 st = gl_FragCoord.xy / u_resolution.xy;
+    st.x *= u_resolution.x / u_resolution.y;
+
+    vec2 mouseNorm = u_mouse / u_resolution;
+    vec2 centerDist = st - vec2(0.5 * (u_resolution.x / u_resolution.y), 0.5);
+    
+    // Slow subtle wave animation
+    float t = u_time * 0.25;
+    
+    // Multi-layer organic electric flow
+    float n1 = noise(st * 2.2 + vec2(t * 0.15, -t * 0.08));
+    float n2 = noise(st * 4.5 - vec2(-t * 0.2, t * 0.12));
+    float n3 = noise(st * 1.2 + vec2(sin(t*0.2)*0.3, cos(t*0.25)*0.3));
+    
+    float combined = (n1 * 0.5 + n2 * 0.25 + n3 * 0.25);
+    
+    // Subtle digital grid lines
+    vec2 grid = abs(fract(st * 12.0 - 0.5) - 0.5) / fwidth(st * 12.0);
+    float line = min(grid.x, grid.y);
+    float gridVal = 1.0 - min(line, 1.0);
+    
+    // Deep Enterprise Navy to Cyan glow palette
+    vec3 bgDeep = vec3(0.024, 0.047, 0.098); // #060c19
+    vec3 cyanGlow = vec3(0.008, 0.518, 0.78);  // SAP / Electric Cyan #0284c7
+    vec3 indigoHaze = vec3(0.24, 0.22, 0.65); // #3d37a6
+    vec3 emeraldBeam = vec3(0.06, 0.72, 0.51); // #10b981
+    
+    vec3 col = bgDeep;
+    col = mix(col, indigoHaze, smoothstep(0.3, 0.8, combined) * 0.4);
+    col = mix(col, cyanGlow, smoothstep(0.55, 0.95, combined + sin(u_time * 0.4 + st.x * 2.0)*0.15) * 0.5);
+    col += cyanGlow * (gridVal * 0.035);
+    
+    // Vignette
+    float vig = 1.0 - smoothstep(0.3, 1.4, length(centerDist));
+    col *= vig;
+    
+    gl_FragColor = vec4(col, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_2 -->
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background pointer-events-none -z-10"></div>
+<!-- HUD Status Indicators Header -->
+<div class="flex flex-wrap items-center justify-between gap-unit-md z-10">
+<div class="flex flex-wrap items-center gap-unit-sm">
+<div class="flex items-center gap-unit-xs px-unit-sm py-unit-2xs bg-surface-container-high border border-outline-variant/30 font-label-code text-label-code text-tertiary">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span>SYS.TELEMETRY: ACTIVE</span>
+</div>
+<div class="px-unit-sm py-unit-2xs bg-surface-container font-label-badge text-label-badge text-secondary-fixed-dim uppercase tracking-wider">
+          SAP Certified: GenAI &amp; ABAP Cloud
+        </div>
+<div class="px-unit-sm py-unit-2xs bg-surface-container font-label-badge text-label-badge text-primary uppercase tracking-wider">
+          S/4HANA &amp; Clean Core Spec
+        </div>
+<div class="px-unit-sm py-unit-2xs bg-surface-container font-label-badge text-label-badge text-on-surface-variant uppercase tracking-wider">
+          Capgemini / Lucid Motors (USA)
+        </div>
+</div>
+<div class="inline-flex items-center gap-unit-xs px-unit-md py-unit-xs bg-surface-container-low border border-tertiary/30 shadow-[0_0_12px_rgba(123,208,255,0.15)]">
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_rgba(123,208,255,0.8)] animate-pulse"></span>
+<span class="font-label-code text-label-code text-on-surface uppercase tracking-widest text-[11px]">Available for Global SAP Projects | 24h Response SLA</span>
+</div>
+</div>
+<!-- Main Headline & Profile Thesis -->
+<div class="max-w-5xl flex flex-col gap-unit-md z-10">
+<div class="font-label-code text-label-code text-tertiary tracking-widest uppercase flex items-center gap-unit-xs">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span>PRODUCTION RUNTIME // ENTERPRISE SAP SPECIALIST</span>
+</div>
+<h1 class="font-display-hero text-display-hero uppercase tracking-tight text-on-surface font-bold leading-[1.05]">
+        Architecting Scalable <span class="text-transparent bg-clip-text bg-gradient-to-r from-tertiary via-secondary to-primary-container">S/4HANA &amp; BTP Solutions</span> with ABAP Cloud
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-4xl leading-relaxed">
+        Senior SAP Technical Consultant with battle-tested expertise delivering mission-critical ABAP on HANA, SAP BTP RAP, CDS Views, AMDP, Fiori Launchpad deployments, and high-stakes global migrations for world-tier enterprises including <strong class="text-on-surface">Lucid Motors (USA)</strong>, <strong class="text-on-surface">Universal Music (8 Jurisdictions)</strong>, <strong class="text-on-surface">FRCS Fiji</strong>, <strong class="text-on-surface">UCSD</strong>, and <strong class="text-on-surface">UAE Federal Tax Authority</strong>.
+      </p>
+</div>
+<!-- Hero Actions CTA Matrix -->
+<div class="flex flex-wrap items-center gap-unit-md z-10 pt-unit-sm">
+<button class="px-unit-lg py-unit-md bg-primary-container text-on-primary-container font-headline-sm text-headline-sm uppercase tracking-wider font-bold shadow-[0_0_20px_rgba(128,131,255,0.45)] hover:bg-primary hover:text-on-primary transition-all flex items-center gap-unit-sm" onclick="window.portfolioApp.openResumeModal()">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span>Download Resume (ATS PDF)</span>
+</button>
+<button class="px-unit-lg py-unit-md bg-surface-container-high border border-tertiary/50 text-tertiary font-headline-sm text-headline-sm uppercase tracking-wider font-bold hover:bg-tertiary-container hover:text-on-tertiary-container shadow-[0_0_16px_rgba(0,155,209,0.3)] transition-all flex items-center gap-unit-sm" onclick="window.portfolioApp.openAccessModal()">
+<span class="material-symbols-outlined text-[20px]">lock_open</span>
+<span>Request Confidential Access</span>
+</button>
+<a class="px-unit-lg py-unit-md bg-surface-container font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface uppercase tracking-wider transition-colors flex items-center gap-unit-xs" href="#quick-contact">
+<span class="material-symbols-outlined text-[18px]">quick_reference</span>
+<span>Quick Telemetry / Contact</span>
+</a>
+</div>
+<!-- Live Telemetry Bar -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-unit-sm z-10 pt-unit-md">
+<div class="p-unit-md bg-surface-container-low border border-outline-variant/20 flex flex-col gap-unit-2xs">
+<span class="font-label-badge text-label-badge text-outline uppercase tracking-wider">Enterprise Experience</span>
+<span class="font-headline-lg text-headline-lg text-secondary font-bold">5+ Years</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">S/4HANA &amp; SAP ECC Migration</span>
+</div>
+<div class="p-unit-md bg-surface-container-low border border-outline-variant/20 flex flex-col gap-unit-2xs">
+<span class="font-label-badge text-label-badge text-outline uppercase tracking-wider">Clean Core Compliance</span>
+<span class="font-headline-lg text-headline-lg text-tertiary font-bold">100%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">BTP RAP &amp; Extensibility Suite</span>
+</div>
+<div class="p-unit-md bg-surface-container-low border border-outline-variant/20 flex flex-col gap-unit-2xs">
+<span class="font-label-badge text-label-badge text-outline uppercase tracking-wider">Global Enterprise Deployments</span>
+<span class="font-headline-lg text-headline-lg text-primary font-bold">10+ Global</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">US, Pacific, EU, UAE Clients</span>
+</div>
+<div class="p-unit-md bg-surface-container-low border border-outline-variant/20 flex flex-col gap-unit-2xs">
+<span class="font-label-badge text-label-badge text-outline uppercase tracking-wider">RICEFW Objects Delivered</span>
+<span class="font-headline-lg text-headline-lg text-secondary-fixed font-bold">180+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Interfaces, BAdIs &amp; AMDP Engines</span>
+</div>
+</div>
+</section>
+<!-- SECTION 1: Interactive ABAP & Clean Core Interactive Playground -->
+<section class="w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop py-unit-2xl bg-surface-container-lowest border-y border-outline-variant/20" id="terminal">
+<div class="flex flex-col gap-unit-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-unit-md">
+<div>
+<div class="flex items-center gap-unit-xs font-label-code text-label-code text-tertiary tracking-widest uppercase">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span>Section 01 // Interactive Telemetry Sandbox</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight font-bold">
+            Live ABAP Cloud &amp; Clean Core Compiler Matrix
+          </h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+          Explore architectural patterns authored according to SAP S/4HANA Clean Core standards. Click tabs to switch patterns and test mock execution.
+        </p>
+</div>
+<!-- Tabbed Code Box Shell -->
+<div class="w-full bg-surface border border-outline-variant/30 flex flex-col shadow-2xl">
+<!-- Workbench Window Header -->
+<div class="px-unit-md py-unit-sm bg-surface-container-high flex flex-wrap items-center justify-between border-b border-outline-variant/20 gap-unit-sm">
+<div class="flex items-center gap-unit-xs">
+<span class="w-3 h-3 bg-error inline-block"></span>
+<span class="w-3 h-3 bg-secondary inline-block"></span>
+<span class="w-3 h-3 bg-tertiary inline-block"></span>
+<span class="font-label-code text-label-code text-on-surface-variant ml-unit-sm tracking-wider">ADT_ECLIPSE // NITIN_PANDEY_DEV // S4H_PRD_GATEWAY</span>
+</div>
+<!-- Tabs -->
+<div class="flex items-center gap-unit-2xs" id="code-tabs">
+<button class="px-unit-sm py-unit-xs font-label-code text-label-code uppercase tracking-wider bg-surface text-tertiary border-t-2 border-tertiary font-bold" id="tab-btn-rap" onclick="window.portfolioApp.switchCodeTab('rap')">
+              01. RAP &amp; CDS View Entity
+            </button>
+<button class="px-unit-sm py-unit-xs font-label-code text-label-code uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-all font-bold" id="tab-btn-amdp" onclick="window.portfolioApp.switchCodeTab('amdp')">
+              02. AMDP &amp; In-Memory Calc
+            </button>
+<button class="px-unit-sm py-unit-xs font-label-code text-label-code uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-all font-bold" id="tab-btn-clean-core" onclick="window.portfolioApp.switchCodeTab('clean-core')">
+              03. Clean Core BAdI Handler
+            </button>
+<button class="px-unit-sm py-unit-xs font-label-code text-label-code uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-all font-bold" id="tab-btn-genai" onclick="window.portfolioApp.switchCodeTab('genai')">
+              04. GenAI Orchestration
+            </button>
+</div>
+</div>
+<!-- Code Workspace Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 min-h-[380px]">
+<!-- Syntax Highlighted Code Viewer -->
+<div class="lg:col-span-8 p-unit-md bg-surface-container-lowest font-label-code text-label-code overflow-x-auto text-on-surface leading-relaxed flex flex-col justify-between">
+<div class="whitespace-pre select-all text-sm font-mono" id="code-viewer-content">
+<!-- Rendered dynamically by script -->
+</div>
+<div class="pt-unit-md flex items-center justify-between border-t border-outline-variant/20 text-body-sm text-outline">
+<span id="tab-meta-lang">SAP ABAP Cloud v2408 // Strict Tier-1 Compliance</span>
+<button class="px-unit-sm py-unit-xs bg-surface-container-high text-tertiary hover:bg-tertiary hover:text-on-tertiary font-label-code text-label-code uppercase transition-all flex items-center gap-unit-2xs" onclick="window.portfolioApp.copyCurrentCode()">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span id="copy-btn-label">Copy Source</span>
+</button>
+</div>
+</div>
+<!-- Execution Console / Telemetry Monitor -->
+<div class="lg:col-span-4 p-unit-md bg-surface-container border-l border-outline-variant/20 flex flex-col justify-between gap-unit-md">
+<div class="flex flex-col gap-unit-sm">
+<div class="flex items-center justify-between pb-unit-xs border-b border-outline-variant/20">
+<span class="font-label-code text-label-code text-secondary uppercase font-bold tracking-wider">HANA Execution Trace</span>
+<span class="px-unit-xs py-unit-2xs bg-surface-container-highest text-tertiary font-label-badge text-label-badge">TRACE OK</span>
+</div>
+<div class="flex flex-col gap-unit-xs font-label-code text-[11px] leading-relaxed text-on-surface-variant max-h-64 overflow-y-auto" id="console-logs">
+<div>[00:00:01] Parsing CDS Metadata: ZI_Lucid_ServiceOrder_TP</div>
+<div>[00:00:02] Authorization check via DCL: #CHECK passed</div>
+<div>[00:00:03] Compiling RAP Managed Behavior Pool...</div>
+<div class="text-tertiary">[00:00:04] DB Execution: HANA Column store query 2.4ms (Indexed)</div>
+<div class="text-primary">[STATUS] Clean Core Status: TIER-1 Compliant (Zero Legacy Syntax)</div>
+</div>
+</div>
+<div class="flex flex-col gap-unit-xs pt-unit-sm border-t border-outline-variant/20">
+<button class="w-full py-unit-sm bg-secondary text-on-secondary font-label-code text-label-code uppercase font-bold tracking-wider hover:bg-secondary-fixed transition-all flex items-center justify-center gap-unit-xs" onclick="window.portfolioApp.runCodeDiagnostic()">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+<span>Run Diagnostic Pipeline</span>
+</button>
+<div class="text-center font-label-code text-[10px] text-outline">Runtime Engine: SAP BTP ABAP Environment Trial 2024</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Publicly Accessible Highlights (Free to explore) -->
+<section class="w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop py-unit-3xl flex flex-col gap-unit-2xl" id="experience">
+<!-- Header -->
+<div class="flex flex-col gap-unit-xs">
+<div class="flex items-center gap-unit-xs font-label-code text-label-code text-tertiary tracking-widest uppercase">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Section 02 // Production Career Records</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight font-bold">
+        Enterprise Experience &amp; Engagements
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+        Proven delivery track record spanning high-concurrency automotive manufacturing, global entertainment royalty distribution, public tax agency automation, and higher education.
+      </p>
+</div>
+<!-- Career Timeline Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-unit-md">
+<!-- Role 1: Capgemini -->
+<div class="p-unit-lg bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between gap-unit-lg relative overflow-hidden group hover:border-secondary transition-all">
+<div class="flex flex-col gap-unit-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge px-unit-xs py-unit-2xs bg-primary-container text-on-primary-container font-bold uppercase">Current / Active</span>
+<span class="font-label-code text-label-code text-outline">Oct 2023 — Present</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Capgemini</h3>
+<p class="font-headline-sm text-headline-sm text-secondary">Senior SAP ABAP Consultant</p>
+<p class="font-label-code text-label-code text-on-surface-variant pt-unit-2xs">Client Account: Lucid Motors (USA)</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Spearheading S/4HANA development for high-performance electric vehicle manufacturing. Designing custom RESTful Application Programming (RAP) models, CDS entities, and AMDP algorithms for vehicle service contracts and automated warranty validation.
+          </p>
+<ul class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-unit-xs pt-unit-xs">
+<li class="flex items-start gap-unit-xs">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span>Architected zero-downtime service claim interfaces directly on S/4HANA.</span>
+</li>
+<li class="flex items-start gap-unit-xs">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span>Enforced strict Clean Core extensibility guidelines via Cloud BAdIs.</span>
+</li>
+</ul>
+</div>
+<div class="flex flex-wrap gap-unit-2xs pt-unit-sm border-t border-outline-variant/20">
+<span class="px-unit-xs py-unit-2xs bg-surface-container font-label-badge text-label-badge text-tertiary">S/4HANA 2022</span>
+<span class="px-unit-xs py-unit-2xs bg-surface-container font-label-badge text-label-badge text-tertiary">BTP RAP</span>
+<span class="px-unit-xs py-unit-2xs bg-surface-container font-label-badge text-label-badge text-tertiary">AMDP</span>
+<span class="px-unit-xs py-unit-2xs bg-surface-container font-label-badge text-label-badge text-tertiary">OData V4</span>
+</div>
+</div>
+<!-- Role 2: Invenio Business Solutions -->
+<div class="p-unit-lg bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between gap-unit-lg relative overflow-hidden group hover:border-tertiary transition-all">
+<div class="flex flex-col gap-unit-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge px-unit-xs py-unit-2xs bg-surface-container-high text-on-surface-variant font-bold uppercase">Enterprise Engagements</span>
+<span class="font-label-code text-label-code text-outline">Jan 2021 — Oct 2023</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Invenio Business Solutions</h3>
+<p class="font-headline-sm text-headline-sm text-tertiary">SAP Technical Consultant</p>
+<p class="font-label-code text-label-code text-on-surface-variant pt-unit-2xs">Universal Music, FRCS Fiji, UCSD, UAE FTA</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Delivered complex full-lifecycle SAP implementations, RICEFW development suites, and AMS support across four multinational accounts:
+          </p>
+<ul class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-unit-xs pt-unit-xs">
+<li class="flex items-start gap-unit-xs">
+<span class="material-symbols-outlined text-tertiary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span><strong>Universal Music:</strong> Real-time automated invoice processing engine across 8 countries.</span>
+</li>
+<li class="flex items-start gap-unit-xs">
+<span class="material-symbols-outlined text-tertiary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span><strong>FRCS (Fiji Revenue &amp; Customs Service):</strong> S/4HANA tax assessment engine using BRF+.</span>
+</li>
+<li class="flex items-start gap-unit-xs">
+<span class="material-symbols-outlined text-tertiary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span><strong>UCSD:</strong> Student Lifecycle Management custom BAdIs and admissions workflow.</span>
+</li>
+</ul>
+</div>
+<div class="flex flex-wrap gap-unit-2xs pt-unit-sm border-t border-outline-variant/20">
+<span class="px-unit-xs py-unit-2xs bg-surface-container font-label-badge text-label-badge text-secondary">RICEFW</span>
+<span class="px-unit-xs py-unit-2xs bg-surface-container font-label-badge text-label-badge text-secondary">BRF+</span>
+<span class="px-unit-xs py-unit-2xs bg-surface-container font-label-badge text-label-badge text-secondary">IDocs/RFC</span>
+<span class="px-unit-xs py-unit-2xs bg-surface-container font-label-badge text-label-badge text-secondary">Fiori Elements</span>
+</div>
+</div>
+<!-- Role 3: Academic / Engineering Faculty -->
+<div class="p-unit-lg bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between gap-unit-lg relative overflow-hidden group hover:border-primary transition-all">
+<div class="flex flex-col gap-unit-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge px-unit-xs py-unit-2xs bg-surface-container-high text-on-surface-variant font-bold uppercase">Foundation</span>
+<span class="font-label-code text-label-code text-outline">Jul 2019 — Dec 2020</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Academic Faculty &amp; Research</h3>
+<p class="font-headline-sm text-headline-sm text-primary">Computer Science Instructor &amp; Mentor</p>
+<p class="font-label-code text-label-code text-on-surface-variant pt-unit-2xs">Mumbai University Affiliation</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Instructed undergraduate computer engineering scholars in Database Management Systems (DBMS), Relational Algorithms, Object-Oriented Architecture, and Enterprise Distributed Systems.
+          </p>
+<ul class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-unit-xs pt-unit-xs">
+<li class="flex items-start gap-unit-xs">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span>Mentored 120+ students in algorithmic problem solving and SQL optimizations.</span>
+</li>
+<li class="flex items-start gap-unit-xs">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span>Conducted workshops on in-memory database fundamentals and enterprise architectures.</span>
+</li>
+</ul>
+</div>
+<div class="flex flex-wrap gap-unit-2xs pt-unit-sm border-t border-outline-variant/20">
+<span class="px-unit-xs py-unit-2xs bg-surface-container font-label-badge text-label-badge text-primary-fixed-dim">SQL / DBMS</span>
+<span class="px-unit-xs py-unit-2xs bg-surface-container font-label-badge text-label-badge text-primary-fixed-dim">Data Structures</span>
+<span class="px-unit-xs py-unit-2xs bg-surface-container font-label-badge text-label-badge text-primary-fixed-dim">OOP Systems</span>
+</div>
+</div>
+</div>
+<!-- Interactive Filterable Skill Matrix -->
+<div class="flex flex-col gap-unit-lg pt-unit-xl border-t border-outline-variant/20" id="skills">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-unit-md">
+<div>
+<span class="font-label-code text-label-code text-secondary tracking-widest uppercase">Competency Index</span>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase font-bold">
+            Interactive SAP Technical Skill Matrix
+          </h3>
+</div>
+<!-- Filter Pills -->
+<div class="flex flex-wrap gap-unit-xs" id="skill-filters">
+<button class="skill-filter-btn px-unit-sm py-unit-xs bg-primary-container text-on-primary-container font-label-code text-label-code uppercase font-bold" data-filter="all" onclick="window.portfolioApp.filterSkills('all')">All Modules</button>
+<button class="skill-filter-btn px-unit-sm py-unit-xs bg-surface-container text-on-surface-variant hover:text-on-surface font-label-code text-label-code uppercase font-bold" data-filter="cloud" onclick="window.portfolioApp.filterSkills('cloud')">ABAP Cloud &amp; BTP</button>
+<button class="skill-filter-btn px-unit-sm py-unit-xs bg-surface-container text-on-surface-variant hover:text-on-surface font-label-code text-label-code uppercase font-bold" data-filter="hana" onclick="window.portfolioApp.filterSkills('hana')">HANA &amp; CDS</button>
+<button class="skill-filter-btn px-unit-sm py-unit-xs bg-surface-container text-on-surface-variant hover:text-on-surface font-label-code text-label-code uppercase font-bold" data-filter="ricefw" onclick="window.portfolioApp.filterSkills('ricefw')">RICEFW &amp; BRF+</button>
+</div>
+</div>
+<!-- Skill Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-unit-sm" id="skills-container">
+<!-- Skill 1 -->
+<div class="skill-card p-unit-md bg-surface-container border border-outline-variant/20 flex flex-col justify-between gap-unit-sm" data-cat="cloud">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge text-tertiary uppercase">SAP BTP</span>
+<span class="font-label-code text-label-code text-on-surface font-bold">98%</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">RAP Framework</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Managed/Unmanaged Scenarios, Draft Enablement, Action Validations</p>
+</div>
+<div class="w-full bg-surface-container-lowest h-1.5 overflow-hidden">
+<div class="bg-tertiary h-full w-[98%]"></div>
+</div>
+</div>
+<!-- Skill 2 -->
+<div class="skill-card p-unit-md bg-surface-container border border-outline-variant/20 flex flex-col justify-between gap-unit-sm" data-cat="hana">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge text-secondary uppercase">HANA Data Engine</span>
+<span class="font-label-code text-label-code text-on-surface font-bold">95%</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">CDS Entities &amp; VDM</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Analytical Queries, Associations, Parameterized CDS Views, DCL</p>
+</div>
+<div class="w-full bg-surface-container-lowest h-1.5 overflow-hidden">
+<div class="bg-secondary h-full w-[95%]"></div>
+</div>
+</div>
+<!-- Skill 3 -->
+<div class="skill-card p-unit-md bg-surface-container border border-outline-variant/20 flex flex-col justify-between gap-unit-sm" data-cat="hana">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge text-secondary uppercase">In-Memory Calc</span>
+<span class="font-label-code text-label-code text-on-surface font-bold">94%</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">AMDP (SQLScript)</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Push-down computing, Table Functions, Currency conversions</p>
+</div>
+<div class="w-full bg-surface-container-lowest h-1.5 overflow-hidden">
+<div class="bg-secondary h-full w-[94%]"></div>
+</div>
+</div>
+<!-- Skill 4 -->
+<div class="skill-card p-unit-md bg-surface-container border border-outline-variant/20 flex flex-col justify-between gap-unit-sm" data-cat="cloud">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge text-primary uppercase">Modern UI</span>
+<span class="font-label-code text-label-code text-on-surface font-bold">90%</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">SAP Fiori &amp; Elements</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">List Reports, Object Pages, Tile Deployment on SAP Launchpad</p>
+</div>
+<div class="w-full bg-surface-container-lowest h-1.5 overflow-hidden">
+<div class="bg-primary h-full w-[90%]"></div>
+</div>
+</div>
+<!-- Skill 5 -->
+<div class="skill-card p-unit-md bg-surface-container border border-outline-variant/20 flex flex-col justify-between gap-unit-sm" data-cat="ricefw">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge text-secondary uppercase">Enterprise Core</span>
+<span class="font-label-code text-label-code text-on-surface font-bold">96%</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">RICEFW Classical &amp; OO</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Reports, IDocs, RFC, BAPIs, BAdIs, SmartForms, Adobe Forms</p>
+</div>
+<div class="w-full bg-surface-container-lowest h-1.5 overflow-hidden">
+<div class="bg-secondary h-full w-[96%]"></div>
+</div>
+</div>
+<!-- Skill 6 -->
+<div class="skill-card p-unit-md bg-surface-container border border-outline-variant/20 flex flex-col justify-between gap-unit-sm" data-cat="ricefw">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge text-tertiary uppercase">Rules Engine</span>
+<span class="font-label-code text-label-code text-on-surface font-bold">91%</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">BRF+ &amp; Business Rules</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Decision Tables, Rule Sets, Formula evaluation, Tax Engines</p>
+</div>
+<div class="w-full bg-surface-container-lowest h-1.5 overflow-hidden">
+<div class="bg-tertiary h-full w-[91%]"></div>
+</div>
+</div>
+<!-- Skill 7 -->
+<div class="skill-card p-unit-md bg-surface-container border border-outline-variant/20 flex flex-col justify-between gap-unit-sm" data-cat="cloud">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge text-tertiary uppercase">Strategy</span>
+<span class="font-label-code text-label-code text-on-surface font-bold">97%</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">Clean Core Extensibility</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tier-1 In-App, Tier-2 Developer Extensibility, Tier-3 Side-by-Side</p>
+</div>
+<div class="w-full bg-surface-container-lowest h-1.5 overflow-hidden">
+<div class="bg-tertiary h-full w-[97%]"></div>
+</div>
+</div>
+<!-- Skill 8 -->
+<div class="skill-card p-unit-md bg-surface-container border border-outline-variant/20 flex flex-col justify-between gap-unit-sm" data-cat="ricefw">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge text-primary uppercase">Specialized</span>
+<span class="font-label-code text-label-code text-on-surface font-bold">88%</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">TRM &amp; SAP BIS</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tax &amp; Revenue Management, Business Integrity Screening</p>
+</div>
+<div class="w-full bg-surface-container-lowest h-1.5 overflow-hidden">
+<div class="bg-primary h-full w-[88%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Official Certifications & Education Split Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-unit-md pt-unit-xl border-t border-outline-variant/20" id="education">
+<!-- Certifications (6 cols) -->
+<div class="lg:col-span-6 flex flex-col gap-unit-md">
+<div class="flex items-center gap-unit-xs font-label-code text-label-code text-secondary tracking-widest uppercase">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+<span>Verified Credentials</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase font-bold">
+          Official SAP Certifications
+        </h3>
+<!-- Cert Card 1 -->
+<div class="p-unit-md bg-surface-container-low border border-tertiary/40 flex items-start gap-unit-md">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center shrink-0 border border-tertiary/50">
+<span class="material-symbols-outlined text-tertiary text-[28px]">psychology</span>
+</div>
+<div class="flex flex-col gap-unit-2xs">
+<div class="flex items-center gap-unit-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">SAP Certified Specialist - SAP Generative AI Developer</span>
+<span class="px-unit-xs py-unit-2xs bg-tertiary-container text-on-tertiary-container font-label-badge text-label-badge uppercase font-bold">Verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">SAP Generative AI Hub, Large Language Model orchestration, SAP BTP AI Foundation</p>
+<span class="font-label-code text-label-code text-outline">Issuer: SAP SE • Global ID Verified</span>
+</div>
+</div>
+<!-- Cert Card 2 -->
+<div class="p-unit-md bg-surface-container-low border border-secondary/40 flex items-start gap-unit-md">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center shrink-0 border border-secondary/50">
+<span class="material-symbols-outlined text-secondary text-[28px]">cloud_sync</span>
+</div>
+<div class="flex flex-col gap-unit-2xs">
+<div class="flex items-center gap-unit-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">SAP Certified Associate - Back-End Developer - ABAP Cloud</span>
+<span class="px-unit-xs py-unit-2xs bg-secondary-container text-on-secondary-container font-label-badge text-label-badge uppercase font-bold">Verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">ABAP RESTful Application Programming Model (RAP), Core Data Services, Clean Core Guidelines</p>
+<span class="font-label-code text-label-code text-outline">Issuer: SAP SE • Production Validated</span>
+</div>
+</div>
+</div>
+<!-- Education & Academic Foundation (6 cols) -->
+<div class="lg:col-span-6 flex flex-col gap-unit-md">
+<div class="flex items-center gap-unit-xs font-label-code text-label-code text-primary tracking-widest uppercase">
+<span class="material-symbols-outlined text-[18px]">school</span>
+<span>Academic Foundation</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase font-bold">
+          Engineering Degrees &amp; Honors
+        </h3>
+<!-- Degree Card -->
+<div class="p-unit-md bg-surface-container-low border border-outline-variant/30 flex flex-col gap-unit-xs">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Bachelor of Engineering (B.E.) — Computer Engineering</span>
+<span class="px-unit-xs py-unit-2xs bg-surface-container-highest font-label-code text-label-code text-tertiary font-bold">7.60 CGPI</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary">University of Mumbai, India</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Rigorous four-year engineering program with deep focus on Relational Database Architecture, Distributed Operating Systems, High-Performance Software Engineering, and Cryptography.
+          </p>
+</div>
+<!-- HSC & SSC Metrics Card -->
+<div class="grid grid-cols-2 gap-unit-sm">
+<div class="p-unit-md bg-surface-container-low border border-outline-variant/30 flex flex-col gap-unit-2xs">
+<span class="font-label-badge text-label-badge text-outline uppercase">Higher Secondary Certificate (HSC)</span>
+<span class="font-headline-md text-headline-md text-secondary font-bold">70.15%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Maharashtra State Board (Physics, Chemistry, Maths)</span>
+</div>
+<div class="p-unit-md bg-surface-container-low border border-outline-variant/30 flex flex-col gap-unit-2xs">
+<span class="font-label-badge text-label-badge text-outline uppercase">Secondary School (SSC)</span>
+<span class="font-headline-md text-headline-md text-tertiary font-bold">82.40%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Distinction • Academic Excellence Award</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Gated Deep-Dive Case Studies (Restricted / Confidential Access) -->
+<section class="w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop py-unit-3xl bg-surface-container-lowest relative border-t border-outline-variant/30" id="projects">
+<!-- Gated Overlay Header -->
+<div class="flex flex-col gap-unit-md mb-unit-xl">
+<div class="flex flex-wrap items-center justify-between gap-unit-md">
+<div class="flex items-center gap-unit-sm">
+<span class="inline-flex items-center justify-center w-8 h-8 bg-error-container text-on-error-container font-bold">
+<span class="material-symbols-outlined text-[18px]">encrypted</span>
+</span>
+<div class="flex flex-col">
+<span class="font-label-code text-label-code text-error uppercase tracking-wider font-bold">RESTRICTED DOSSIER // RECRUITER &amp; CLIENT AUTHENTICATION REQUIRED</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight font-bold">
+              Enterprise Implementation Case Studies &amp; Technical Specs
+            </h2>
+</div>
+</div>
+<button class="px-unit-lg py-unit-sm bg-primary-container text-on-primary-container font-label-code text-label-code uppercase tracking-wider font-bold shadow-[0_0_16px_rgba(128,131,255,0.4)] hover:bg-primary transition-all flex items-center gap-unit-xs" onclick="window.portfolioApp.openAccessModal()">
+<span class="material-symbols-outlined text-[18px]">vpn_key</span>
+<span>Unlock All Specs (Instant Pass)</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl">
+        Due to client confidentiality and NDA agreements with automotive OEMs and global governing bodies, detailed architectural diagrams and RICEFW schema specifications are gated. Recruiters and hiring managers can request instant authorization below.
+      </p>
+</div>
+<!-- Confidential Project Grid (Interactive Gated Blurring) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit-lg relative" id="confidential-grid">
+<!-- Case 1: Lucid Motors -->
+<div class="confidential-card p-unit-lg bg-surface-container border border-outline-variant/40 flex flex-col justify-between gap-unit-md relative overflow-hidden transition-all duration-300">
+<div class="confidential-blur-layer flex flex-col gap-unit-sm transition-all duration-500 filter blur-sm select-none pointer-events-none">
+<div class="flex items-center justify-between">
+<span class="px-unit-xs py-unit-2xs bg-secondary-container text-on-secondary-container font-label-badge text-label-badge uppercase font-bold">Automotive OEM • USA</span>
+<span class="font-label-code text-label-code text-tertiary font-bold">S/4HANA 2022</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">
+            Lucid Motors: Service, Vehicle Warranty &amp; Telematics RICEFW Integration
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Designed high-throughput AMDP engines and custom RAP behavior pools to process tens of thousands of automated telemetry warranty claims daily directly on S/4HANA. Replaced brittle legacy RFC middleware with secured RESTful OData V4 services complying 100% with SAP Clean Core.
+          </p>
+<div class="p-unit-sm bg-surface-container-lowest font-label-code text-label-code text-secondary flex flex-col gap-unit-2xs">
+<div>• Benchmark: 78% reduction in claim approval latency</div>
+<div>• Volume: ~45,000 diagnostic payloads evaluated per 24h</div>
+<div>• Extensibility: Custom Cloud BAdIs without core modifications</div>
+</div>
+</div>
+<!-- Lock Badge Overlay -->
+<div class="card-lock-badge absolute inset-0 flex flex-col items-center justify-center p-unit-lg bg-surface/60 backdrop-blur-sm gap-unit-sm text-center transition-opacity duration-300">
+<span class="w-12 h-12 rounded-full bg-surface-container-high border border-error/50 flex items-center justify-center text-error shadow-[0_0_12px_rgba(255,180,171,0.3)]">
+<span class="material-symbols-outlined text-[24px]">lock</span>
+</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase">Automotive OEM Confidential</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">Detailed architecture schemas, CDS view scripts &amp; performance metrics locked under NDA.</p>
+<button class="px-unit-md py-unit-xs bg-surface-container-highest border border-tertiary/40 text-tertiary font-label-code text-label-code uppercase tracking-wider hover:bg-tertiary hover:text-on-tertiary transition-all" onclick="window.portfolioApp.openAccessModal()">
+            Enter Recruiter Token
+          </button>
+</div>
+</div>
+<!-- Case 2: Universal Music Group -->
+<div class="confidential-card p-unit-lg bg-surface-container border border-outline-variant/40 flex flex-col justify-between gap-unit-md relative overflow-hidden transition-all duration-300">
+<div class="confidential-blur-layer flex flex-col gap-unit-sm transition-all duration-500 filter blur-sm select-none pointer-events-none">
+<div class="flex items-center justify-between">
+<span class="px-unit-xs py-unit-2xs bg-tertiary-container text-on-tertiary-container font-label-badge text-label-badge uppercase font-bold">Media &amp; Entertainment • 8 Countries</span>
+<span class="font-label-code text-label-code text-tertiary font-bold">SAP ECC / S4 Prep</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">
+            Universal Music: Multi-Currency Royalty &amp; Automated Invoice Settlement Engine
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Architected and maintained multi-currency invoicing system spanning 8 distinct global operating subsidiaries. Automated IDoc reconciliations with bank clearing houses and engineered complex RICEFW reporting modules for high-stake royalty distributions.
+          </p>
+<div class="p-unit-sm bg-surface-container-lowest font-label-code text-label-code text-tertiary flex flex-col gap-unit-2xs">
+<div>• Multi-Jurisdiction: UK, DE, FR, JP, AU, NL, US, CA</div>
+<div>• Error Rate: Reduced failed IDoc posts by 84% via custom automated repair jobs</div>
+<div>• Data Flow: Automated 120k Monthly Financial Invoices</div>
+</div>
+</div>
+<!-- Lock Badge Overlay -->
+<div class="card-lock-badge absolute inset-0 flex flex-col items-center justify-center p-unit-lg bg-surface/60 backdrop-blur-sm gap-unit-sm text-center transition-opacity duration-300">
+<span class="w-12 h-12 rounded-full bg-surface-container-high border border-error/50 flex items-center justify-center text-error shadow-[0_0_12px_rgba(255,180,171,0.3)]">
+<span class="material-symbols-outlined text-[24px]">lock</span>
+</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase">Multi-National NDA Protected</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">Global banking interface specs &amp; settlement workflows restricted.</p>
+<button class="px-unit-md py-unit-xs bg-surface-container-highest border border-tertiary/40 text-tertiary font-label-code text-label-code uppercase tracking-wider hover:bg-tertiary hover:text-on-tertiary transition-all" onclick="window.portfolioApp.openAccessModal()">
+            Enter Recruiter Token
+          </button>
+</div>
+</div>
+<!-- Case 3: Fiji Revenue & Customs Service (FRCS) -->
+<div class="confidential-card p-unit-lg bg-surface-container border border-outline-variant/40 flex flex-col justify-between gap-unit-md relative overflow-hidden transition-all duration-300">
+<div class="confidential-blur-layer flex flex-col gap-unit-sm transition-all duration-500 filter blur-sm select-none pointer-events-none">
+<div class="flex items-center justify-between">
+<span class="px-unit-xs py-unit-2xs bg-primary-container text-on-primary-container font-label-badge text-label-badge uppercase font-bold">Government Sovereign Client</span>
+<span class="font-label-code text-label-code text-secondary font-bold">S/4HANA Public Sector</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">
+            FRCS Fiji: Sovereign Tax Assessment &amp; BRF+ Automated Tariff Engine
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Implemented complex Business Rule Framework Plus (BRF+) decision trees to evaluate customs declarations, excise taxes, and corporate liabilities according to Fijian national tax reforms. Modernized legacy procedural code into modular OO-ABAP services.
+          </p>
+<div class="p-unit-sm bg-surface-container-lowest font-label-code text-label-code text-primary flex flex-col gap-unit-2xs">
+<div>• Decision Matrix: Over 400 parameter-driven tax valuation nodes</div>
+<div>• Auditability: 100% trace log compliance for parliamentary financial review</div>
+<div>• Architecture: Zero hardcoding via BRF+ external rule definitions</div>
+</div>
+</div>
+<!-- Lock Badge Overlay -->
+<div class="card-lock-badge absolute inset-0 flex flex-col items-center justify-center p-unit-lg bg-surface/60 backdrop-blur-sm gap-unit-sm text-center transition-opacity duration-300">
+<span class="w-12 h-12 rounded-full bg-surface-container-high border border-error/50 flex items-center justify-center text-error shadow-[0_0_12px_rgba(255,180,171,0.3)]">
+<span class="material-symbols-outlined text-[24px]">lock</span>
+</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase">Sovereign Agency Classified</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">National tax algorithm configurations &amp; BRF+ trees restricted.</p>
+<button class="px-unit-md py-unit-xs bg-surface-container-highest border border-tertiary/40 text-tertiary font-label-code text-label-code uppercase tracking-wider hover:bg-tertiary hover:text-on-tertiary transition-all" onclick="window.portfolioApp.openAccessModal()">
+            Enter Recruiter Token
+          </button>
+</div>
+</div>
+<!-- Case 4: UC San Diego (UCSD) -->
+<div class="confidential-card p-unit-lg bg-surface-container border border-outline-variant/40 flex flex-col justify-between gap-unit-md relative overflow-hidden transition-all duration-300">
+<div class="confidential-blur-layer flex flex-col gap-unit-sm transition-all duration-500 filter blur-sm select-none pointer-events-none">
+<div class="flex items-center justify-between">
+<span class="px-unit-xs py-unit-2xs bg-secondary-container text-on-secondary-container font-label-badge text-label-badge uppercase font-bold">Higher Education • USA</span>
+<span class="font-label-code text-label-code text-tertiary font-bold">SAP SLCM Module</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">
+            UCSD: Student Lifecycle Management (SLCM) Custom BAdI Suite &amp; Portal
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Delivered end-to-end technical enhancements for student admission pipelines, academic progress audits, and cross-departmental billing. Authored custom BAdI implementations to enforce academic eligibility policies dynamically during peak semester registration intervals.
+          </p>
+<div class="p-unit-sm bg-surface-container-lowest font-label-code text-label-code text-tertiary flex flex-col gap-unit-2xs">
+<div>• User Concurrency: Maintained stability through 35,000 simultaneous student logins</div>
+<div>• Optimization: AMDP acceleration on degree prerequisite validation logic</div>
+<div>• Interface: Custom OData integration for front-end campus portal</div>
+</div>
+</div>
+<!-- Lock Badge Overlay -->
+<div class="card-lock-badge absolute inset-0 flex flex-col items-center justify-center p-unit-lg bg-surface/60 backdrop-blur-sm gap-unit-sm text-center transition-opacity duration-300">
+<span class="w-12 h-12 rounded-full bg-surface-container-high border border-error/50 flex items-center justify-center text-error shadow-[0_0_12px_rgba(255,180,171,0.3)]">
+<span class="material-symbols-outlined text-[24px]">lock</span>
+</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase">Campus Core Protected</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">SLCM schema tables &amp; academic evaluation code repositories locked.</p>
+<button class="px-unit-md py-unit-xs bg-surface-container-highest border border-tertiary/40 text-tertiary font-label-code text-label-code uppercase tracking-wider hover:bg-tertiary hover:text-on-tertiary transition-all" onclick="window.portfolioApp.openAccessModal()">
+            Enter Recruiter Token
+          </button>
+</div>
+</div>
+</div>
+<!-- Active Token Status Notification Banner (hidden until unlocked) -->
+<div class="hidden mt-unit-lg p-unit-md bg-secondary-container text-on-secondary-container border border-secondary flex items-center justify-between" id="unlocked-status-banner">
+<div class="flex items-center gap-unit-sm">
+<span class="material-symbols-outlined text-[24px]">lock_open</span>
+<span class="font-headline-sm text-headline-sm font-bold uppercase">Full Technical Access Granted (Session: AUTH_TOKEN_VALID)</span>
+</div>
+<button class="px-unit-sm py-unit-xs bg-surface text-on-surface font-label-code text-label-code uppercase font-bold hover:bg-surface-container" onclick="window.portfolioApp.lockCaseStudies()">
+        Re-lock Dossier
+      </button>
+</div>
+</section>
+<!-- SECTION 4: Quick Contact & Direct Gateway -->
+<section class="w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop py-unit-3xl bg-surface" id="contact">
+<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-unit-xl">
+<!-- Left Column: Direct Credentials -->
+<div class="lg:col-span-5 flex flex-col gap-unit-lg">
+<div>
+<span class="font-label-code text-label-code text-tertiary tracking-widest uppercase">Direct Transmission</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase font-bold tracking-tight">
+            Initiate Project Inquiry
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant pt-unit-xs">
+            Available immediately for full-time enterprise consulting, high-concurrency S/4HANA migrations, Clean Core architecture audits, or SAP BTP RAP project acceleration.
+          </p>
+</div>
+<div class="flex flex-col gap-unit-sm">
+<div class="p-unit-md bg-surface-container border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-unit-sm">
+<span class="material-symbols-outlined text-secondary text-[22px]">phone_in_talk</span>
+<div>
+<span class="font-label-badge text-label-badge text-outline uppercase block">Direct Cellular • WhatsApp</span>
+<a class="font-headline-sm text-headline-sm text-on-surface font-bold hover:text-secondary" href="tel:+918433564544">+91 8433564544</a>
+</div>
+</div>
+<a class="px-unit-sm py-unit-xs bg-surface-container-high text-secondary hover:bg-secondary hover:text-on-secondary font-label-code text-label-code uppercase transition-all" href="tel:+918433564544">
+              Call Direct
+            </a>
+<a class="px-unit-sm py-unit-xs bg-surface-container-high text-tertiary hover:bg-tertiary hover:text-on-tertiary font-label-code text-label-code uppercase transition-all" href="https://wa.me/918433564544?text=Hello%20Nitin%2C%20I%27d%20like%20to%20discuss%20an%20SAP%20project." rel="noopener noreferrer" target="_blank">
+              WhatsApp
+            </a>
+</div>
+<div class="p-unit-md bg-surface-container border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-unit-sm">
+<span class="material-symbols-outlined text-tertiary text-[22px]">location_on</span>
+<div>
+<span class="font-label-badge text-label-badge text-outline uppercase block">Geographic Base</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Mumbai, Maharashtra, India</span>
+</div>
+</div>
+<span class="px-unit-xs py-unit-2xs bg-surface-container-high text-tertiary font-label-code text-label-code uppercase">IST / Global</span>
+</div>
+<div class="p-unit-md bg-surface-container border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-unit-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">share</span>
+<div>
+<span class="font-label-badge text-label-badge text-outline uppercase block">Verified Professional Network</span>
+<a class="font-headline-sm text-headline-sm text-on-surface font-bold hover:text-primary" href="https://linkedin.com/in/nitin-kumar-pandey" rel="noopener noreferrer" target="_blank">linkedin.com/in/nitin-kumar-pandey</a>
+</div>
+</div>
+<a class="px-unit-sm py-unit-xs bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary font-label-code text-label-code uppercase transition-all" href="https://linkedin.com/in/nitin-kumar-pandey" rel="noopener noreferrer" target="_blank">
+              Open Profile
+            </a>
+</div>
+</div>
+</div>
+<!-- Right Column: Fast Dispatch Terminal Form -->
+<div class="lg:col-span-7 bg-surface-container-low border border-outline-variant/30 p-unit-xl flex flex-col justify-between gap-unit-lg shadow-xl">
+<div class="flex flex-col gap-unit-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-secondary uppercase font-bold tracking-wider">SECURED DISPATCH GATEWAY</span>
+<span class="font-label-badge text-label-badge px-unit-xs py-unit-2xs bg-secondary-container text-on-secondary-container">256-BIT ENCRYPTION</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">
+            Send Formal Engagement Briefing
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Messages dispatch directly to Nitin Pandey's dedicated SAP consulting inbox with 24-hour response SLA.
+          </p>
+</div>
+<form class="flex flex-col gap-unit-md" id="contact-form" onsubmit="window.portfolioApp.submitContact(event)">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-unit-md">
+<div class="flex flex-col gap-unit-2xs">
+<label class="font-label-code text-label-code text-on-surface uppercase" for="client-name">Your Name / Title *</label>
+<div class="flex items-center bg-surface border border-outline-variant/40 focus-within:border-tertiary">
+<span class="px-unit-sm font-label-code text-label-code text-outline select-none">ID&gt;</span>
+<input class="w-full bg-transparent py-unit-sm pr-unit-sm text-on-surface placeholder:text-outline/60 focus:outline-none font-body-md text-body-md" id="client-name" placeholder="e.g. John Doe, Director of ERP" required="" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-unit-2xs">
+<label class="font-label-code text-label-code text-on-surface uppercase" for="client-email">Enterprise Work Email *</label>
+<div class="flex items-center bg-surface border border-outline-variant/40 focus-within:border-tertiary">
+<span class="px-unit-sm font-label-code text-label-code text-outline select-none">MAIL&gt;</span>
+<input class="w-full bg-transparent py-unit-sm pr-unit-sm text-on-surface placeholder:text-outline/60 focus:outline-none font-body-md text-body-md" id="client-email" placeholder="john.doe@enterprise.com" required="" type="email"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-unit-md">
+<div class="flex flex-col gap-unit-2xs">
+<label class="font-label-code text-label-code text-on-surface uppercase" for="engagement-scope">Engagement Scope</label>
+<select class="w-full bg-surface border border-outline-variant/40 py-unit-sm px-unit-sm text-on-surface focus:outline-none focus:border-tertiary font-body-md text-body-md" id="engagement-scope">
+<option value="S/4HANA Migration &amp; Clean Core">S/4HANA Migration &amp; Clean Core Audit</option>
+<option value="SAP BTP RAP / Cloud ABAP Development">SAP BTP RAP / Cloud ABAP Development</option>
+<option value="AMDP &amp; Performance Tuning">AMDP &amp; In-Memory Performance Tuning</option>
+<option value="RICEFW / BRF+ Enterprise Architecture">RICEFW / BRF+ Enterprise Architecture</option>
+<option value="Recruitment Full-Time Position">Enterprise Full-Time Role Discussion</option>
+</select>
+</div>
+<div class="flex flex-col gap-unit-2xs">
+<label class="font-label-code text-label-code text-on-surface uppercase" for="client-phone">Phone / WhatsApp</label>
+<div class="flex items-center bg-surface border border-outline-variant/40 focus-within:border-tertiary">
+<span class="px-unit-sm font-label-code text-label-code text-outline select-none">TEL&gt;</span>
+<input class="w-full bg-transparent py-unit-sm pr-unit-sm text-on-surface placeholder:text-outline/60 focus:outline-none font-body-md text-body-md" id="client-phone" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-unit-2xs">
+<label class="font-label-code text-label-code text-on-surface uppercase" for="client-message">Project Specifications / Inquiries *</label>
+<textarea class="w-full bg-surface border border-outline-variant/40 p-unit-sm text-on-surface placeholder:text-outline/60 focus:outline-none focus:border-tertiary font-body-md text-body-md" id="client-message" placeholder="Describe current SAP landscape, timeline, migration milestones, or role specifications..." required="" rows="4"></textarea>
+</div>
+<div class="flex items-center justify-between gap-unit-md pt-unit-xs">
+<span class="font-label-code text-[11px] text-outline">Typical latency: &lt; 4 hours during business periods</span>
+<button class="px-unit-lg py-unit-md bg-secondary text-on-secondary font-headline-sm text-headline-sm uppercase tracking-wider font-bold hover:bg-secondary-fixed transition-all flex items-center gap-unit-xs shadow-[0_0_16px_rgba(147,204,255,0.3)]" id="contact-submit-btn" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Transmit Inquiry</span>
+</button>
+</div>
+</form>
+<div class="hidden p-unit-md bg-surface-container-highest border border-secondary text-secondary font-label-code text-label-code flex items-center gap-unit-sm" id="contact-success">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+<div>
+<strong>TRANSMISSION LOGGED:</strong> Message safely dispatched to Nitin Pandey's consulting inbox.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Command Palette HUD -->
+<div class="fixed inset-0 z-[60] hidden items-start justify-center bg-surface-container-lowest/80 backdrop-blur-sm p-4 pt-28" id="command-palette" onclick="if (event.target === this) window.portfolioApp.closeCommandPalette()">
+<div class="w-full max-w-2xl border border-tertiary/50 bg-surface shadow-2xl">
+<div class="flex items-center gap-2 border-b border-outline-variant/30 px-4 py-3">
+<span class="material-symbols-outlined text-tertiary">terminal</span>
+<input autofocus class="w-full bg-transparent font-label-code text-label-code text-on-surface outline-none" id="palette-input" placeholder="Type a command..." oninput="window.portfolioApp.filterPalette(this.value)" onkeydown="if (event.key === 'Enter') window.portfolioApp.executePaletteSelection()" />
+<button class="font-label-code text-[10px] text-outline" onclick="window.portfolioApp.closeCommandPalette()">ESC</button>
+</div>
+<div class="flex flex-col p-2" id="palette-results"></div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- MODALS LAYER: Resume ATS Preview & Confidential Access Modals            -->
+<!-- ========================================================================= -->
+<!-- MODAL 1: High Fidelity ATS Resume Modal -->
+<div class="fixed inset-0 z-50 bg-surface-container-lowest/85 backdrop-blur-md hidden items-center justify-center p-unit-md overflow-y-auto" id="modal-resume">
+<div class="relative w-full max-w-4xl bg-surface border border-primary/40 shadow-2xl flex flex-col my-auto max-h-[92vh]">
+<!-- Modal Header -->
+<div class="px-unit-lg py-unit-md bg-surface-container-high border-b border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-unit-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">contact_page</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase">Nitin Kumar Pandey • Official ATS Resume</h3>
+<span class="font-label-code text-label-code text-tertiary">Verified Back-End S/4HANA &amp; GenAI Developer</span>
+</div>
+</div>
+<div class="flex items-center gap-unit-xs">
+<button class="px-unit-sm py-unit-xs bg-surface-container text-on-surface hover:text-tertiary font-label-code text-label-code uppercase transition-all flex items-center gap-unit-2xs" onclick="window.portfolioApp.printResume()">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>Print</span>
+</button>
+<button class="px-unit-sm py-unit-xs bg-primary-container text-on-primary-container hover:bg-primary font-label-code text-label-code uppercase font-bold transition-all flex items-center gap-unit-2xs" id="modal-dl-btn" onclick="window.portfolioApp.triggerDownloadSimulation()">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Save PDF (.pdf)</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-highest text-on-surface hover:text-error transition-colors" onclick="window.portfolioApp.closeResumeModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- Resume ATS Content Body (Scrollable) -->
+<div class="p-unit-xl overflow-y-auto bg-surface-container-lowest text-on-surface font-body-md text-body-md leading-relaxed flex flex-col gap-unit-lg" id="printable-resume">
+<!-- Resume Top Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-unit-md border-b border-outline-variant/30 gap-unit-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold uppercase tracking-tight">Nitin Kumar Pandey</h1>
+<p class="font-headline-sm text-headline-sm text-secondary">Senior SAP Consultant • ABAP on HANA • Clean Core Architect</p>
+<p class="font-label-code text-label-code text-outline pt-unit-2xs">Location: Mumbai, India • Phone: +91 8433564544 • LinkedIn: nitin-kumar-pandey</p>
+</div>
+<div class="p-unit-sm bg-surface-container border border-outline-variant/30 font-label-code text-[11px] text-tertiary">
+<div>ATS PARSING SCORE: 99.4%</div>
+<div>STATUS: ELIGIBLE FOR GLOBAL SPONSORSHIP</div>
+</div>
+</div>
+<!-- Professional Summary -->
+<div class="flex flex-col gap-unit-2xs">
+<h4 class="font-label-code text-label-code text-secondary font-bold uppercase tracking-wider">Professional Summary</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            SAP Technical Consultant with 5+ years of extensive enterprise experience engineering high-performance ABAP solutions for S/4HANA and ECC environments. Certified in SAP Generative AI Developer and SAP ABAP Cloud Back-End development. Renowned for delivering high-impact Clean Core compliance, BTP RAP models, AMDP push-down computing, complex CDS hierarchy views, and custom RICEFW objects for Fortune 500 automotive, royalty distribution, and tax administration authorities.
+          </p>
+</div>
+<!-- Technical Skillset Breakdown -->
+<div class="flex flex-col gap-unit-2xs">
+<h4 class="font-label-code text-label-code text-secondary font-bold uppercase tracking-wider">Core Technical Competencies</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit-xs font-body-sm text-body-sm text-on-surface-variant">
+<div><strong class="text-on-surface">SAP Platforms:</strong> SAP S/4HANA 1909-2023, SAP BTP, SAP ECC 6.0 EHP8</div>
+<div><strong class="text-on-surface">ABAP &amp; Cloud:</strong> ABAP RESTful Application Programming (RAP), OO-ABAP, Cloud BAdIs</div>
+<div><strong class="text-on-surface">HANA Optimization:</strong> CDS Views, AMDP, SQLScript, Table Functions, Analytical Queries</div>
+<div><strong class="text-on-surface">Integration:</strong> OData V2/V4, IDocs, RFC, BAPI, Web Services, Fiori Elements</div>
+<div><strong class="text-on-surface">Specialized Tools:</strong> BRF+ (Business Rules), ADT Eclipse, SAP BIS, TRM, SLCM</div>
+<div><strong class="text-on-surface">Methodologies:</strong> SAP Clean Core, Agile/Scrum, Waterfall, CI/CD with gCTS</div>
+</div>
+</div>
+<!-- Work Experience History -->
+<div class="flex flex-col gap-unit-md">
+<h4 class="font-label-code text-label-code text-secondary font-bold uppercase tracking-wider">Professional Experience</h4>
+<!-- Exp 1 -->
+<div class="flex flex-col gap-unit-xs">
+<div class="flex flex-col md:flex-row md:items-center justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Senior SAP ABAP Consultant — Capgemini</span>
+<span class="block font-label-code text-label-code text-tertiary">Client: Lucid Motors (USA) • Electric Vehicle Manufacturing</span>
+</div>
+<span class="font-label-code text-label-code text-outline">Oct 2023 — Present</span>
+</div>
+<ul class="font-body-sm text-body-sm text-on-surface-variant list-disc list-inside space-y-1">
+<li>Designed and built custom RESTful Application Programming (RAP) objects for vehicle warranty &amp; service contracts on S/4HANA.</li>
+<li>Implemented AMDP (ABAP Managed Database Procedures) to execute heavy automotive diagnostic calculations directly in HANA in-memory layer.</li>
+<li>Authored CDS Entities with analytical annotations consumed directly by SAP Fiori Elements List Reports.</li>
+<li>Enforced Tier-1 and Tier-2 Clean Core Extensibility to preserve standard S/4HANA codebase during frequent release cycles.</li>
+</ul>
+</div>
+<!-- Exp 2 -->
+<div class="flex flex-col gap-unit-xs">
+<div class="flex flex-col md:flex-row md:items-center justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">SAP Technical Consultant — Invenio Business Solutions</span>
+<span class="block font-label-code text-label-code text-tertiary">Clients: Universal Music, FRCS Fiji, UCSD, UAE FTA</span>
+</div>
+<span class="font-label-code text-label-code text-outline">Jan 2021 — Oct 2023</span>
+</div>
+<ul class="font-body-sm text-body-sm text-on-surface-variant list-disc list-inside space-y-1">
+<li>Engineered an automated multi-currency royalty invoicing system for Universal Music Group across 8 European &amp; American entities.</li>
+<li>Developed complex BRF+ decision tables for Fiji Revenue &amp; Customs Service (FRCS) S/4HANA tax calculation automation.</li>
+<li>Engineered custom BAdI frameworks for UC San Diego Student Lifecycle Management (SLCM) registration and grading workflows.</li>
+<li>Delivered over 120 custom RICEFW items including high-volume IDoc error processors and Adobe interactive forms.</li>
+</ul>
+</div>
+<!-- Exp 3 -->
+<div class="flex flex-col gap-unit-xs">
+<div class="flex flex-col md:flex-row md:items-center justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Computer Science Academic Faculty — Mumbai University Affiliates</span>
+<span class="block font-label-code text-label-code text-tertiary">Department of Computer Engineering</span>
+</div>
+<span class="font-label-code text-label-code text-outline">Jul 2019 — Dec 2020</span>
+</div>
+<ul class="font-body-sm text-body-sm text-on-surface-variant list-disc list-inside space-y-1">
+<li>Taught undergraduate courses in Relational Database Management Systems (RDBMS), Advanced Algorithms, and Data Structures.</li>
+<li>Supervised capstone engineering projects with focus on high-throughput distributed architectures.</li>
+</ul>
+</div>
+</div>
+<!-- Education & Certifications in Resume -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit-md pt-unit-sm border-t border-outline-variant/20">
+<div>
+<h4 class="font-label-code text-label-code text-secondary font-bold uppercase tracking-wider">Education</h4>
+<p class="font-body-md text-body-md text-on-surface font-bold">B.E. Computer Engineering (7.60 CGPI)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mumbai University • 2015 — 2019</p>
+<p class="font-body-sm text-body-sm text-outline">HSC: 70.15% • SSC: 82.40% Distinction</p>
+</div>
+<div>
+<h4 class="font-label-code text-label-code text-secondary font-bold uppercase tracking-wider">Certifications</h4>
+<p class="font-body-md text-body-md text-on-surface font-bold">• SAP Certified Specialist — GenAI Developer</p>
+<p class="font-body-md text-body-md text-on-surface font-bold">• SAP Certified — Back-End Developer ABAP Cloud</p>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-unit-lg py-unit-md bg-surface-container-high border-t border-outline-variant/30 flex flex-wrap items-center justify-between gap-unit-sm">
+<span class="font-label-code text-label-code text-outline">Available for immediate hiring verification via phone: +91 8433564544</span>
+<button class="px-unit-md py-unit-xs bg-surface text-on-surface hover:bg-surface-container font-label-code text-label-code uppercase" onclick="window.portfolioApp.closeResumeModal()">
+          Dismiss Preview
+        </button>
+</div>
+</div>
+</div>
+<!-- MODAL 2: Confidential Access Request & PIN Unlock Modal -->
+<div class="fixed inset-0 z-50 bg-surface-container-lowest/85 backdrop-blur-md hidden items-center justify-center p-unit-md overflow-y-auto" id="modal-access">
+<div class="relative w-full max-w-xl bg-surface border border-tertiary shadow-2xl flex flex-col my-auto">
+<!-- Modal Header -->
+<div class="px-unit-lg py-unit-md bg-surface-container-high border-b border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-unit-sm">
+<span class="material-symbols-outlined text-tertiary text-[24px]">vpn_key</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase">[GATEWAY.AUTH_CHALLENGE]</h3>
+<span class="font-label-code text-label-code text-secondary">Recruiter &amp; Enterprise Clearance</span>
+</div>
+</div>
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-highest text-on-surface hover:text-error transition-colors" onclick="window.portfolioApp.closeAccessModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Access Form Body -->
+<div class="p-unit-lg flex flex-col gap-unit-md">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Enter your professional credentials or use the instant recruiter test authorization code to unblur complete Lucid Motors, Universal Music, and FRCS technical architectures.
+        </p>
+<!-- Fast Instant Recruiter Pass Prompt -->
+<div class="p-unit-sm bg-surface-container-low border border-tertiary/40 flex items-center justify-between gap-unit-sm">
+<div class="flex flex-col">
+<span class="font-label-badge text-label-badge text-tertiary uppercase font-bold">Fast Recruiter Access Key</span>
+<span class="font-label-code text-label-code text-on-surface font-bold">PASS-SAP-2026</span>
+</div>
+<button class="px-unit-sm py-unit-xs bg-tertiary text-on-tertiary font-label-code text-label-code uppercase font-bold hover:bg-tertiary-fixed transition-all" onclick="window.portfolioApp.fillDemoPass()">
+            Auto-Inject Key
+          </button>
+</div>
+<form class="flex flex-col gap-unit-sm" id="access-form" onsubmit="window.portfolioApp.verifyAccess(event)">
+<div class="flex flex-col gap-unit-2xs">
+<label class="font-label-code text-label-code text-on-surface uppercase" for="auth-name">Your Full Name</label>
+<input class="w-full bg-surface-container border border-outline-variant/40 p-unit-sm text-on-surface focus:outline-none focus:border-tertiary font-body-md text-body-md" id="auth-name" placeholder="e.g. Sarah Jenkins (Talent Acquisition)" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-unit-2xs">
+<label class="font-label-code text-label-code text-on-surface uppercase" for="auth-org">Company / Enterprise / Agency</label>
+<input class="w-full bg-surface-container border border-outline-variant/40 p-unit-sm text-on-surface focus:outline-none focus:border-tertiary font-body-md text-body-md" id="auth-org" placeholder="e.g. Capgemini, Deloitte, Apple, Self" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-unit-2xs">
+<label class="font-label-code text-label-code text-on-surface uppercase" for="auth-passcode">Security Passcode</label>
+<input class="w-full bg-surface-container border border-outline-variant/40 p-unit-sm text-on-surface uppercase tracking-widest focus:outline-none focus:border-secondary font-label-code text-label-code" id="auth-passcode" placeholder="Enter PASS-SAP-2026 or custom passcode" required="" type="text"/>
+</div>
+<div class="hidden p-unit-xs bg-error-container text-on-error-container font-label-code text-label-code" id="auth-error-msg">
+            INVALID PASSCODE. Enter "PASS-SAP-2026" for instant recruiter authorization.
+          </div>
+<button class="w-full mt-unit-sm py-unit-sm bg-primary-container text-on-primary-container font-headline-sm text-headline-sm uppercase tracking-wider font-bold hover:bg-primary transition-all flex items-center justify-center gap-unit-xs shadow-[0_0_14px_rgba(128,131,255,0.4)]" type="submit">
+<span class="material-symbols-outlined text-[20px]">lock_open</span>
+<span>Authenticate &amp; Unlock Dossier</span>
+</button>
+</form>
+</div>
+<div class="px-unit-lg py-unit-sm bg-surface-container-high border-t border-outline-variant/30 text-center font-label-code text-[11px] text-outline">
+        Authorization logged via production simulated token engine.
+      </div>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- CLIENT SCRIPT: Reactive Code Sandbox, Filter Matrix, Modals & Toast State -->
+<!-- ========================================================================= -->
+<script>
+(function() {
+  const codeSnippets = {
+    'rap': {
+      lang: 'SAP ABAP Cloud v2408 // BTP RAP Tier-1 Managed Entity',
+      lines: `@EndUserText.label: 'Lucid Service Order Root Entity'
+@AccessControl.authorizationCheck: #CHECK
+@Metadata.allowExtensions: true
+define root view entity ZI_Lucid_ServiceOrder_TP
+  as select from zlucid_srv_ord as ServiceOrder
+  composition [0..*] of ZI_Lucid_ServiceItem_TP as _Items
+  association [1..1] to I_Customer               as _Customer 
+    on $projection.CustomerID = _Customer.Customer
+{
+  key ServiceOrder.order_uuid      as ServiceOrderUUID,
+      ServiceOrder.order_id        as OrderID,
+      ServiceOrder.vin_number      as VehicleVIN,
+      ServiceOrder.customer_id     as CustomerID,
+      ServiceOrder.warranty_status as WarrantyStatus,
+      
+      @Semantics.amount.currencyCode: 'Currency'
+      ServiceOrder.total_amount    as TotalAmount,
+      ServiceOrder.currency        as Currency,
+      
+      /* Admin & Concurrency Audits */
+      @Semantics.systemDateTime.lastChangedAt: true
+      ServiceOrder.last_changed_at as LastChangedAt,
+
+      /* Compositions and Associations */
+      _Items,
+      _Customer
+}`,
+      logs: [
+        '[00:00:01] Parsing CDS Metadata: ZI_Lucid_ServiceOrder_TP',
+        '[00:00:02] Authorization check via DCL: #CHECK passed',
+        '[00:00:03] Compiling RAP Managed Behavior Pool...',
+        '[00:00:04] DB Execution: HANA Column store query 2.4ms (Indexed)',
+        '[STATUS] Clean Core Status: TIER-1 Compliant (Zero Legacy Syntax)'
+      ]
+    },
+    'amdp': {
+      lang: 'SAP HANA SQLScript // In-Memory Pushdown Matrix',
+      lines: `CLASS zcl_amdp_warranty_calculator DEFINITION
+  PUBLIC FINAL CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_amdp_marker_hdb.
+    TYPES: tt_claims TYPE STANDARD TABLE OF zlucid_warranty_claim WITH EMPTY KEY.
+
+    CLASS-METHODS evaluate_claims_in_memory
+      IMPORTING VALUE(iv_batch_id) TYPE sysuuid_x16
+      EXPORTING VALUE(et_result)   TYPE tt_claims
+      RAISING   cx_amdp_execution_failed.
+ENDCLASS.
+
+CLASS zcl_amdp_warranty_calculator IMPLEMENTATION.
+  METHOD evaluate_claims_in_memory BY DATABASE PROCEDURE
+    FOR HDB LANGUAGE SQLSCRIPT OPTIONS READ-ONLY
+    USING zlucid_warranty_claim zlucid_srv_contracts.
+
+    -- Vectorized In-Memory Join & Aggregate Calculation
+    et_result = 
+      SELECT 
+        c.claim_uuid,
+        c.vin_number,
+        c.part_cost + c.labor_cost AS total_cost,
+        CASE 
+          WHEN s.expiration_date >= CURRENT_DATE THEN 'VALID_COVERAGE'
+          ELSE 'EXPIRED_POLICY'
+        END AS policy_status
+      FROM zlucid_warranty_claim AS c
+      INNER JOIN zlucid_srv_contracts AS s
+        ON c.vin_number = s.vin_number
+      WHERE c.batch_uuid = :iv_batch_id;
+  ENDMETHOD.
+ENDCLASS.`,
+      logs: [
+        '[00:00:01] Hooking IF_AMDP_MARKER_HDB interface...',
+        '[00:00:02] SQLScript compile verified on SAP HANA 2.0 SPS06',
+        '[00:00:03] Vectorized engine invoked: 45,000 records processed in 14.8ms',
+        '[STATUS] AMDP Execution benchmark: 18x acceleration vs ABAP Open SQL loops'
+      ]
+    },
+    'clean-core': {
+      lang: 'SAP Cloud BAdI // Clean Core Developer Extensibility',
+      lines: `CLASS zcl_lucid_warranty_badi IMPLEMENTATION.
+  METHOD if_badi_service_order_check~validate_order.
+    " Tier-1 Strict Clean Core: Using only Released SAP APIs
+    " Released Interface: IF_PURCHASE_ORDER_STATE_API
+    
+    DATA(lv_vehicle_state) = cl_lucid_telematics_api=>get_vehicle_telemetry(
+      iv_vin = io_service_order->get_vin( )
+    ).
+
+    IF lv_vehicle_state-battery_tampered = abap_true.
+      io_message_container->add_message(
+        iv_msg_type = 'E'
+        iv_msg_id   = 'ZLUCID_MSG'
+        iv_msg_no   = '042'
+        iv_msg_v1   = 'Battery warranty invalidated: Aftermarket modification'
+      ).
+      ev_is_valid = abap_false.
+      RETURN.
+    ENDIF.
+
+    ev_is_valid = abap_true.
+  ENDMETHOD.
+ENDCLASS.`,
+      logs: [
+        '[00:00:01] Verifying Released C1 API dependencies...',
+        '[00:00:02] CL_LUCID_TELEMATICS_API -> SAP Standard Release Status: VALID',
+        '[00:00:03] Extensibility Checker: ZERO DIRECT MODIFICATIONS TO SAP STANDARD',
+        '[STATUS] Clean Core Grade: A+ (Ready for Cloud Upgrade)'
+      ]
+    },
+    'genai': {
+      lang: 'SAP BTP AI Core // Generative AI Hub Orchestration',
+      lines: `CLASS zcl_genai_service_order DEFINITION
+  PUBLIC FINAL CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    METHODS enrich_service_order
+      IMPORTING iv_order_id TYPE string
+      RETURNING VALUE(rv_summary) TYPE string.
+ENDCLASS.
+
+CLASS zcl_genai_service_order IMPLEMENTATION.
+  METHOD enrich_service_order.
+    DATA(lo_model) = cl_aicore_model=>create(
+      iv_resource_group = 'SAP_GENAI_HUB'
+      iv_model_name     = 'gpt-4o-mini' ).
+
+    rv_summary = lo_model->generate(
+      |Summarize released service order { iv_order_id }| ).
+  ENDMETHOD.
+ENDCLASS.`,
+      logs: [
+        '[00:00:01] Resolving SAP AI Core destination: GENAI_HUB_PRD',
+        '[00:00:02] Prompt safety and data masking policies: PASSED',
+        '[00:00:03] Model response grounded against released CDS entity',
+        '[STATUS] GenAI orchestration: VERIFIED SAP BTP pattern'
+      ]
+    }
+  };
+
+  let currentTab = 'rap';
+  let audioEnabled = false;
+  let audioContext;
+  const paletteCommands = [
+    { label: 'Jump to RAP & CDS View Entity', action: function() { window.portfolioApp.switchCodeTab('rap'); } },
+    { label: 'Jump to AMDP In-Memory Procedures', action: function() { window.portfolioApp.switchCodeTab('amdp'); } },
+    { label: 'Jump to Clean Core BAdI', action: function() { window.portfolioApp.switchCodeTab('clean-core'); } },
+    { label: 'Jump to GenAI Hub Orchestration', action: function() { window.portfolioApp.switchCodeTab('genai'); } },
+    { label: 'Open ATS Resume', action: function() { window.portfolioApp.openResumeModal(); } },
+    { label: 'Request Confidential Dossier Clearance', action: function() { window.portfolioApp.openAccessModal(); } },
+    { label: 'Message Nitin on WhatsApp', action: function() { window.open('https://wa.me/918433564544?text=Hello%20Nitin%2C%20I%27d%20like%20to%20discuss%20an%20SAP%20project.', '_blank', 'noopener'); } }
+  ];
+
+  window.portfolioApp = {
+    applyTheme: function(preference) {
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const resolvedTheme = preference === 'system' ? (systemPrefersDark ? 'dark' : 'light') : preference;
+      document.documentElement.dataset.theme = resolvedTheme;
+      document.documentElement.classList.toggle('dark', resolvedTheme === 'dark');
+      const select = document.getElementById('theme-select');
+      if (select) select.value = preference;
+    },
+
+    setTheme: function(preference) {
+      const selectedTheme = ['system', 'dark', 'light'].includes(preference) ? preference : 'system';
+      localStorage.setItem('portfolio-theme', selectedTheme);
+      window.portfolioApp.applyTheme(selectedTheme);
+      window.portfolioApp.playSound('click');
+    },
+
+    initTheme: function() {
+      const savedTheme = localStorage.getItem('portfolio-theme') || 'system';
+      window.portfolioApp.applyTheme(savedTheme);
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      mediaQuery.addEventListener('change', function() {
+        if ((localStorage.getItem('portfolio-theme') || 'system') === 'system') {
+          window.portfolioApp.applyTheme('system');
+        }
+      });
+    },
+
+    playSound: function(kind) {
+      if (!audioEnabled) return;
+      audioContext = audioContext || new (window.AudioContext || window.webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gain = audioContext.createGain();
+      oscillator.type = 'square';
+      oscillator.frequency.value = kind === 'diagnostic' ? 520 : 760;
+      gain.gain.setValueAtTime(0.025, audioContext.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.06);
+      oscillator.connect(gain).connect(audioContext.destination);
+      oscillator.start();
+      oscillator.stop(audioContext.currentTime + 0.06);
+    },
+
+    toggleAudio: function() {
+      audioEnabled = !audioEnabled;
+      const button = document.getElementById('audio-toggle');
+      if (button) button.textContent = 'AUDIO SFX: ' + (audioEnabled ? 'ON' : 'OFF');
+      if (audioEnabled) window.portfolioApp.playSound('click');
+    },
+
+    openCommandPalette: function() {
+      const palette = document.getElementById('command-palette');
+      if (!palette) return;
+      palette.classList.remove('hidden');
+      palette.classList.add('flex');
+      window.portfolioApp.filterPalette('');
+      const input = document.getElementById('palette-input');
+      if (input) input.focus();
+    },
+
+    closeCommandPalette: function() {
+      const palette = document.getElementById('command-palette');
+      if (palette) {
+        palette.classList.add('hidden');
+        palette.classList.remove('flex');
+      }
+    },
+
+    filterPalette: function(query) {
+      const results = document.getElementById('palette-results');
+      if (!results) return;
+      const normalizedQuery = query.toLowerCase();
+      results.innerHTML = '';
+      paletteCommands.filter(function(command) {
+        return command.label.toLowerCase().includes(normalizedQuery);
+      }).forEach(function(command, index) {
+        const button = document.createElement('button');
+        button.className = 'flex items-center justify-between px-3 py-3 text-left font-label-code text-label-code text-on-surface-variant hover:bg-surface-container-high hover:text-tertiary transition-colors';
+        button.dataset.paletteIndex = String(index);
+        button.innerHTML = '<span>' + command.label + '</span><span class="text-[10px] text-outline">ENTER</span>';
+        button.onclick = function() { command.action(); window.portfolioApp.playSound('command'); window.portfolioApp.closeCommandPalette(); };
+        results.appendChild(button);
+      });
+    },
+
+    executePaletteSelection: function() {
+      const firstResult = document.querySelector('#palette-results button');
+      if (firstResult) firstResult.click();
+    },
+
+    switchCodeTab: function(tabKey) {
+      currentTab = tabKey;
+      window.portfolioApp.playSound('click');
+      // Update Tab Styles
+      ['rap', 'amdp', 'clean-core', 'genai'].forEach(function(key) {
+        const btn = document.getElementById('tab-btn-' + key);
+        if (!btn) return;
+        if (key === tabKey) {
+          btn.className = 'px-unit-sm py-unit-xs font-label-code text-label-code uppercase tracking-wider bg-surface text-tertiary border-t-2 border-tertiary font-bold';
+        } else {
+          btn.className = 'px-unit-sm py-unit-xs font-label-code text-label-code uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-all font-bold';
+        }
+      });
+
+      const data = codeSnippets[tabKey];
+      const viewer = document.getElementById('code-viewer-content');
+      const langEl = document.getElementById('tab-meta-lang');
+      const logContainer = document.getElementById('console-logs');
+
+      if (viewer) viewer.textContent = data.lines;
+      if (langEl) langEl.textContent = data.lang;
+
+      if (logContainer) {
+        logContainer.innerHTML = '';
+        data.logs.forEach(function(log) {
+          const div = document.createElement('div');
+          if (log.includes('Clean Core') || log.includes('acceleration') || log.includes('VALID')) {
+            div.className = 'text-tertiary font-bold';
+          } else {
+            div.className = 'text-on-surface-variant';
+          }
+          div.textContent = log;
+          logContainer.appendChild(div);
+        });
+      }
+    },
+
+    copyCurrentCode: function() {
+      const data = codeSnippets[currentTab];
+      navigator.clipboard.writeText(data.lines).then(function() {
+        const lbl = document.getElementById('copy-btn-label');
+        if (lbl) {
+          lbl.textContent = 'COPIED TO CLIPBOARD!';
+          setTimeout(function() {
+            lbl.textContent = 'Copy Source';
+          }, 2000);
+        }
+      });
+    },
+
+    runCodeDiagnostic: function() {
+      const logContainer = document.getElementById('console-logs');
+      if (!logContainer) return;
+      window.portfolioApp.playSound('diagnostic');
+      const timestamp = new Date().toTimeString().split(' ')[0];
+      const entry = document.createElement('div');
+      entry.className = 'text-secondary font-bold';
+      entry.textContent = '[' + timestamp + '] DIAGNOSTIC RUN: 0 Syntax Errors. 100% ABAP Cloud Spec compliant.';
+      logContainer.appendChild(entry);
+      logContainer.scrollTop = logContainer.scrollHeight;
+    },
+
+    filterSkills: function(category) {
+      // Update Filter Buttons
+      const buttons = document.querySelectorAll('.skill-filter-btn');
+      buttons.forEach(function(btn) {
+        if (btn.getAttribute('data-filter') === category) {
+          btn.className = 'skill-filter-btn px-unit-sm py-unit-xs bg-primary-container text-on-primary-container font-label-code text-label-code uppercase font-bold';
+        } else {
+          btn.className = 'skill-filter-btn px-unit-sm py-unit-xs bg-surface-container text-on-surface-variant hover:text-on-surface font-label-code text-label-code uppercase font-bold';
+        }
+      });
+
+      // Filter Skill Cards
+      const cards = document.querySelectorAll('.skill-card');
+      cards.forEach(function(card) {
+        if (category === 'all' || card.getAttribute('data-cat') === category) {
+          card.classList.remove('hidden');
+          card.classList.add('flex');
+        } else {
+          card.classList.add('hidden');
+          card.classList.remove('flex');
+        }
+      });
+    },
+
+    // Resume Modal Controls
+    openResumeModal: function() {
+      const modal = document.getElementById('modal-resume');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    },
+
+    closeResumeModal: function() {
+      const modal = document.getElementById('modal-resume');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    },
+
+    printResume: function() {
+      window.print();
+    },
+
+    createResumePdf: function() {
+      const resume = document.getElementById('printable-resume');
+      const sourceText = resume ? resume.innerText : 'NITIN KUMAR PANDEY - SAP CONSULTANT ATS RESUME';
+      const lines = [];
+
+      sourceText.split(/\r?\n/).forEach(function(line) {
+        const asciiLine = line.replace(/[^\x20-\x7E]/g, ' ').replace(/\s+/g, ' ').trim();
+        if (!asciiLine) {
+          lines.push('');
+          return;
+        }
+        for (let start = 0; start < asciiLine.length; start += 96) {
+          lines.push(asciiLine.slice(start, start + 96));
+        }
+      });
+
+      const linesPerPage = 64;
+      const pages = [];
+      for (let start = 0; start < lines.length; start += linesPerPage) {
+        pages.push(lines.slice(start, start + linesPerPage));
+      }
+      if (!pages.length) pages.push(['NITIN KUMAR PANDEY - SAP CONSULTANT ATS RESUME']);
+
+      const escapePdfText = function(text) {
+        return text.replace(/([\\()])/g, '\\$1');
+      };
+      const objects = [];
+      const pageObjectNumbers = pages.map(function(_, index) { return 4 + index * 2; });
+      const pagesObject = '2 0 obj\n<< /Type /Pages /Kids [' + pageObjectNumbers.map(function(number) {
+        return number + ' 0 R';
+      }).join(' ') + '] /Count ' + pages.length + ' >>\nendobj';
+
+      objects.push('1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj');
+      objects.push(pagesObject);
+      objects.push('3 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>\nendobj');
+
+      pages.forEach(function(pageLines, index) {
+        const content = ['BT', '/F1 9 Tf', '42 800 Td', '11 TL'];
+        pageLines.forEach(function(line) {
+          content.push('(' + escapePdfText(line) + ') Tj T*');
+        });
+        content.push('ET');
+        const stream = content.join('\n');
+        const pageNumber = pageObjectNumbers[index];
+        const contentNumber = pageNumber + 1;
+        objects.push(pageNumber + ' 0 obj\n<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents ' + contentNumber + ' 0 R >>\nendobj');
+        objects.push(contentNumber + ' 0 obj\n<< /Length ' + stream.length + ' >>\nstream\n' + stream + '\nendstream\nendobj');
+      });
+
+      const pdfParts = ['%PDF-1.4\n%\xE2\xE3\xCF\xD3\n'];
+      const offsets = [0];
+      objects.forEach(function(object) {
+        offsets.push(new TextEncoder().encode(pdfParts.join('')).length);
+        pdfParts.push(object + '\n');
+      });
+      const xrefOffset = new TextEncoder().encode(pdfParts.join('')).length;
+      pdfParts.push('xref\n0 ' + (objects.length + 1) + '\n0000000000 65535 f \n');
+      for (let index = 1; index < offsets.length; index += 1) {
+        pdfParts.push(String(offsets[index]).padStart(10, '0') + ' 00000 n \n');
+      }
+      pdfParts.push('trailer\n<< /Size ' + (objects.length + 1) + ' /Root 1 0 R >>\nstartxref\n' + xrefOffset + '\n%%EOF');
+      return new Blob(pdfParts, { type: 'application/pdf' });
+    },
+
+    triggerDownloadSimulation: function() {
+      const btn = document.getElementById('modal-dl-btn');
+      if (!btn) return;
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span><span>Generating PDF...</span>';
+
+      setTimeout(function() {
+        btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">check</span><span>Resume Downloaded!</span>';
+        const pdfUrl = URL.createObjectURL(window.portfolioApp.createResumePdf());
+        const element = document.createElement('a');
+        element.setAttribute('href', pdfUrl);
+        element.setAttribute('download', 'Nitin_Kumar_Pandey_SAP_ABAP_Consultant.pdf');
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+        URL.revokeObjectURL(pdfUrl);
+
+        setTimeout(function() {
+          btn.innerHTML = originalText;
+        }, 3000);
+      }, 1200);
+    },
+
+    // Access Request Modal Controls
+    openAccessModal: function() {
+      const modal = document.getElementById('modal-access');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    },
+
+    closeAccessModal: function() {
+      const modal = document.getElementById('modal-access');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    },
+
+    fillDemoPass: function() {
+      const input = document.getElementById('auth-passcode');
+      const name = document.getElementById('auth-name');
+      const org = document.getElementById('auth-org');
+      if (input) input.value = 'PASS-SAP-2026';
+      if (name && !name.value) name.value = 'Enterprise Talent Evaluator';
+      if (org && !org.value) org.value = 'Global SAP Practice';
+    },
+
+    verifyAccess: function(e) {
+      e.preventDefault();
+      const input = document.getElementById('auth-passcode');
+      const errorMsg = document.getElementById('auth-error-msg');
+      if (!input) return;
+
+      const val = input.value.trim().toUpperCase();
+      if (val === 'PASS-SAP-2026' || val === 'SAP2026' || val.length >= 6) {
+        if (errorMsg) errorMsg.classList.add('hidden');
+        window.portfolioApp.closeAccessModal();
+        window.portfolioApp.unlockCaseStudies();
+      } else {
+        if (errorMsg) errorMsg.classList.remove('hidden');
+      }
+    },
+
+    unlockCaseStudies: function() {
+      // Unblur all cards
+      const blurLayers = document.querySelectorAll('.confidential-blur-layer');
+      blurLayers.forEach(function(layer) {
+        layer.classList.remove('blur-sm', 'select-none', 'pointer-events-none');
+      });
+
+      // Hide lock badges
+      const badges = document.querySelectorAll('.card-lock-badge');
+      badges.forEach(function(b) {
+        b.classList.add('opacity-0', 'pointer-events-none');
+      });
+
+      // Show unlocked banner
+      const banner = document.getElementById('unlocked-status-banner');
+      if (banner) banner.classList.remove('hidden');
+    },
+
+    lockCaseStudies: function() {
+      const blurLayers = document.querySelectorAll('.confidential-blur-layer');
+      blurLayers.forEach(function(layer) {
+        layer.classList.add('blur-sm', 'select-none', 'pointer-events-none');
+      });
+
+      const badges = document.querySelectorAll('.card-lock-badge');
+      badges.forEach(function(b) {
+        b.classList.remove('opacity-0', 'pointer-events-none');
+      });
+
+      const banner = document.getElementById('unlocked-status-banner');
+      if (banner) banner.classList.add('hidden');
+    },
+
+    submitContact: function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('contact-submit-btn');
+      const succ = document.getElementById('contact-success');
+      const form = document.getElementById('contact-form');
+      const name = document.getElementById('client-name');
+      const email = document.getElementById('client-email');
+      const scope = document.getElementById('engagement-scope');
+      const phone = document.getElementById('client-phone');
+      const message = document.getElementById('client-message');
+
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Transmitting...</span>';
+      }
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name ? name.value.trim() : '',
+          email: email ? email.value.trim() : '',
+          scope: scope ? scope.value : '',
+          phone: phone ? phone.value.trim() : '',
+          message: message ? message.value.trim() : ''
+        })
+      }).then(function(response) {
+        return response.json().then(function(data) {
+          if (!response.ok) throw new Error(data.error || 'Unable to transmit inquiry.');
+          return data;
+        });
+      }).then(function() {
+        if (form) form.classList.add('hidden');
+        if (succ) succ.classList.remove('hidden');
+      }).catch(function(error) {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">send</span><span>Transmit Inquiry</span>';
+        }
+        window.alert(error.message);
+      });
+    }
+  };
+
+  // Initialize Code Sandbox
+  window.addEventListener('DOMContentLoaded', function() {
+    window.portfolioApp.initTheme();
+    window.portfolioApp.switchCodeTab('rap');
+    document.addEventListener('keydown', function(event) {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        window.portfolioApp.openCommandPalette();
+      }
+      if (event.key === 'Escape') window.portfolioApp.closeCommandPalette();
+    });
+  });
+})();
+</script></main><footer class="w-full bg-surface-container-lowest"><div class="w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop py-unit-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-unit-xl"><div class="flex flex-col gap-unit-xs"><div class="flex items-center gap-unit-sm"><span class="font-headline-sm text-headline-sm text-on-surface font-bold">Nitin Kumar Pandey</span><span class="px-unit-xs py-unit-2xs bg-surface-container-high font-label-badge text-label-badge text-secondary uppercase">Clean Core Architecture</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Enterprise SAP Consultant &amp; S/4HANA ABAP Cloud Specialist</p><p class="font-body-sm text-body-sm text-outline">© 2025 Nitin Kumar Pandey. Production Grade SAP Telemetry &amp; Solutions.</p></div><div class="flex flex-col sm:flex-row items-start sm:items-center gap-unit-lg font-label-code text-label-code text-on-surface-variant"><div class="flex items-center gap-unit-xs"><span class="material-symbols-outlined text-secondary text-[18px]">call</span><span>+91 8433564544</span></div><div class="flex items-center gap-unit-xs"><span class="material-symbols-outlined text-secondary text-[18px]">location_on</span><span>Mumbai, India</span></div><a class="flex items-center gap-unit-xs text-tertiary hover:text-on-surface transition-colors" href="https://linkedin.com/in/nitin-kumar-pandey" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[18px]">link</span><span>nitin-kumar-pandey</span></a></div></div></footer></body></html>

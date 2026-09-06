@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: sap-consultant-portfolio
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    disk:
+      name: portfolio-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: DATABASE_PATH
+        value: /var/data/portfolio.sqlite
+      - key: RESEND_API_KEY
+        sync: false
+      - key: CONTACT_TO_EMAIL
+        sync: false
+      - key: FROM_EMAIL
+        sync: false
+      - key: ADMIN_TOKEN
+        sync: false
