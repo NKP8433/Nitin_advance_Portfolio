@@ -1660,7 +1660,9 @@ ENDCLASS.`,
         });
       }).then(function(data) {
         if (status) {
-          status.textContent = 'REQUEST RECEIVED. A PRIVATE TOKEN WILL BE SENT AFTER REVIEW.';
+          status.textContent = data.notification === 'sent'
+            ? 'REQUEST RECEIVED. THE PRIVATE TOKEN NOTICE WAS SENT FOR REVIEW.'
+            : 'REQUEST STORED, BUT EMAIL NOTIFICATION FAILED. PLEASE USE WHATSAPP.';
           status.classList.remove('hidden');
         }
         if (form) form.reset();

@@ -221,6 +221,7 @@ app.post('/api/access/request', async (request, response) => {
   }
 
   const accessRequest = await createAccessRequest(name.trim(), organization.trim(), email.trim());
+  let notification = 'not_configured';
   if (resend && process.env.CONTACT_TO_EMAIL && process.env.FROM_EMAIL) {
     try {
       await resend.emails.send({
@@ -237,12 +238,21 @@ app.post('/api/access/request', async (request, response) => {
           'This token expires in 24 hours and can be used once.'
         ].join('\n')
       });
+      notification = 'sent';
     } catch (error) {
-      console.error('Access request notification failed:', error);
+      notification = 'failed';
+      console.error('Access request notification failed:', error?.message || error);
     }
   }
 
-  return response.status(202).json({ ok: true, requestId: accessRequest.id, message: 'Request received. Access is reviewed manually.' });
+  return response.status(notification === 'failed' ? 502 : 202).json({
+    ok: notification !== 'failed',
+    requestId: accessRequest.id,
+    notification,
+    message: notification === 'sent'
+      ? 'Request received. A private token notification was sent for review.'
+      : 'Request was stored, but the owner notification could not be sent. Please use WhatsApp.'
+  });
 });
 
 app.post('/api/access/verify', async (request, response) => {
