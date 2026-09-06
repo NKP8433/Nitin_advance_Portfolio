@@ -1135,42 +1135,28 @@ void main() {
 <!-- Access Form Body -->
 <div class="p-unit-lg flex flex-col gap-unit-md">
 <p class="font-body-sm text-body-sm text-on-surface-variant">
-          Enter your professional credentials or use the instant recruiter test authorization code to unblur complete Lucid Motors, Universal Music, and FRCS technical architectures.
+          Technical case studies are shared after a direct recruiter or client request. Contact Nitin with your name, organization, and the project scope you would like to review.
         </p>
-<!-- Fast Instant Recruiter Pass Prompt -->
 <div class="p-unit-sm bg-surface-container-low border border-tertiary/40 flex items-center justify-between gap-unit-sm">
 <div class="flex flex-col">
-<span class="font-label-badge text-label-badge text-tertiary uppercase font-bold">Fast Recruiter Access Key</span>
-<span class="font-label-code text-label-code text-on-surface font-bold">PASS-SAP-2026</span>
+<span class="font-label-badge text-label-badge text-tertiary uppercase font-bold">Controlled technical access</span>
+<span class="font-label-code text-label-code text-on-surface font-bold">Request a private review token</span>
 </div>
-<button class="px-unit-sm py-unit-xs bg-tertiary text-on-tertiary font-label-code text-label-code uppercase font-bold hover:bg-tertiary-fixed transition-all" onclick="window.portfolioApp.fillDemoPass()">
-            Auto-Inject Key
-          </button>
+<span class="material-symbols-outlined text-tertiary">admin_panel_settings</span>
 </div>
-<form class="flex flex-col gap-unit-sm" id="access-form" onsubmit="window.portfolioApp.verifyAccess(event)">
-<div class="flex flex-col gap-unit-2xs">
-<label class="font-label-code text-label-code text-on-surface uppercase" for="auth-name">Your Full Name</label>
-<input class="w-full bg-surface-container border border-outline-variant/40 p-unit-sm text-on-surface focus:outline-none focus:border-tertiary font-body-md text-body-md" id="auth-name" placeholder="e.g. Sarah Jenkins (Talent Acquisition)" required="" type="text"/>
+<div class="flex flex-col sm:flex-row gap-unit-sm">
+<a class="flex-1 py-unit-sm bg-primary-container text-on-primary-container font-headline-sm text-headline-sm uppercase tracking-wider font-bold hover:bg-primary transition-all flex items-center justify-center gap-unit-xs" href="#contact" onclick="window.portfolioApp.closeAccessModal()">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+<span>Request via Contact Form</span>
+</a>
+<a class="flex-1 py-unit-sm bg-tertiary text-on-tertiary font-label-code text-label-code uppercase font-bold hover:bg-tertiary-fixed transition-all flex items-center justify-center gap-unit-xs" href="https://wa.me/918433564544?text=Hello%20Nitin%2C%20I%27d%20like%20to%20request%20confidential%20case%20study%20access." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Request via WhatsApp</span>
+</a>
 </div>
-<div class="flex flex-col gap-unit-2xs">
-<label class="font-label-code text-label-code text-on-surface uppercase" for="auth-org">Company / Enterprise / Agency</label>
-<input class="w-full bg-surface-container border border-outline-variant/40 p-unit-sm text-on-surface focus:outline-none focus:border-tertiary font-body-md text-body-md" id="auth-org" placeholder="e.g. Capgemini, Deloitte, Apple, Self" required="" type="text"/>
-</div>
-<div class="flex flex-col gap-unit-2xs">
-<label class="font-label-code text-label-code text-on-surface uppercase" for="auth-passcode">Security Passcode</label>
-<input class="w-full bg-surface-container border border-outline-variant/40 p-unit-sm text-on-surface uppercase tracking-widest focus:outline-none focus:border-secondary font-label-code text-label-code" id="auth-passcode" placeholder="Enter PASS-SAP-2026 or custom passcode" required="" type="text"/>
-</div>
-<div class="hidden p-unit-xs bg-error-container text-on-error-container font-label-code text-label-code" id="auth-error-msg">
-            INVALID PASSCODE. Enter "PASS-SAP-2026" for instant recruiter authorization.
-          </div>
-<button class="w-full mt-unit-sm py-unit-sm bg-primary-container text-on-primary-container font-headline-sm text-headline-sm uppercase tracking-wider font-bold hover:bg-primary transition-all flex items-center justify-center gap-unit-xs shadow-[0_0_14px_rgba(128,131,255,0.4)]" type="submit">
-<span class="material-symbols-outlined text-[20px]">lock_open</span>
-<span>Authenticate &amp; Unlock Dossier</span>
-</button>
-</form>
 </div>
 <div class="px-unit-lg py-unit-sm bg-surface-container-high border-t border-outline-variant/30 text-center font-label-code text-[11px] text-outline">
-        Authorization logged via production simulated token engine.
+        Access is granted manually after request review.
       </div>
 </div>
 </div>
@@ -1634,31 +1620,6 @@ ENDCLASS.`,
       if (modal) {
         modal.classList.add('hidden');
         modal.classList.remove('flex');
-      }
-    },
-
-    fillDemoPass: function() {
-      const input = document.getElementById('auth-passcode');
-      const name = document.getElementById('auth-name');
-      const org = document.getElementById('auth-org');
-      if (input) input.value = 'PASS-SAP-2026';
-      if (name && !name.value) name.value = 'Enterprise Talent Evaluator';
-      if (org && !org.value) org.value = 'Global SAP Practice';
-    },
-
-    verifyAccess: function(e) {
-      e.preventDefault();
-      const input = document.getElementById('auth-passcode');
-      const errorMsg = document.getElementById('auth-error-msg');
-      if (!input) return;
-
-      const val = input.value.trim().toUpperCase();
-      if (val === 'PASS-SAP-2026' || val === 'SAP2026' || val.length >= 6) {
-        if (errorMsg) errorMsg.classList.add('hidden');
-        window.portfolioApp.closeAccessModal();
-        window.portfolioApp.unlockCaseStudies();
-      } else {
-        if (errorMsg) errorMsg.classList.remove('hidden');
       }
     },
 
