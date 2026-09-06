@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import crypto from 'node:crypto';
 import express from 'express';
 import { Pool } from 'pg';
 import { Resend } from 'resend';
@@ -33,6 +34,18 @@ async function initializeStorage() {
         created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
       )
     `);
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS access_requests (
+        id BIGSERIAL PRIMARY KEY,
+        requester_name TEXT NOT NULL,
+        organization TEXT NOT NULL,
+        requester_email TEXT NOT NULL,
+        token_hash TEXT NOT NULL,
+        expires_at TIMESTAMPTZ NOT NULL,
+        used_at TIMESTAMPTZ,
+        created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+      )
+    `);
     return;
   }
 
@@ -51,6 +64,62 @@ async function initializeStorage() {
       created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
     )
   `);
+  database.exec(`
+    CREATE TABLE IF NOT EXISTS access_requests (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      requester_name TEXT NOT NULL,
+      organization TEXT NOT NULL,
+      requester_email TEXT NOT NULL,
+      token_hash TEXT NOT NULL,
+      expires_at TEXT NOT NULL,
+      used_at TEXT,
+      created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+}
+
+function hashAccessToken(token) {
+  return crypto.createHash('sha256').update(token).digest('hex');
+}
+
+async function createAccessRequest(requesterName, organization, requesterEmail) {
+  const token = crypto.randomBytes(18).toString('base64url');
+  const tokenHash = hashAccessToken(token);
+  const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString();
+
+  if (pool) {
+    const result = await pool.query(
+      `INSERT INTO access_requests (requester_name, organization, requester_email, token_hash, expires_at)
+       VALUES ($1, $2, $3, $4, $5) RETURNING id`,
+      [requesterName, organization, requesterEmail, tokenHash, expiresAt]
+    );
+    return { id: Number(result.rows[0].id), token, expiresAt };
+  }
+
+  const result = database.prepare(
+    `INSERT INTO access_requests (requester_name, organization, requester_email, token_hash, expires_at)
+     VALUES (?, ?, ?, ?, ?)`
+  ).run(requesterName, organization, requesterEmail, tokenHash, expiresAt);
+  return { id: Number(result.lastInsertRowid), token, expiresAt };
+}
+
+async function consumeAccessToken(token) {
+  const tokenHash = hashAccessToken(token);
+  if (pool) {
+    const result = await pool.query(
+      `UPDATE access_requests SET used_at = CURRENT_TIMESTAMP
+       WHERE token_hash = $1 AND used_at IS NULL AND expires_at > CURRENT_TIMESTAMP
+       RETURNING id`,
+      [tokenHash]
+    );
+    return result.rowCount === 1;
+  }
+
+  const result = database.prepare(
+    `UPDATE access_requests SET used_at = CURRENT_TIMESTAMP
+     WHERE token_hash = ? AND used_at IS NULL AND expires_at > CURRENT_TIMESTAMP`
+  ).run(tokenHash);
+  return result.changes === 1;
 }
 
 async function saveInquiry(name, email, scope, phone, message) {
@@ -143,6 +212,45 @@ app.post('/api/contact', async (request, response) => {
     await updateInquiryStatus('failed', inquiryId);
     return response.status(202).json({ ok: true, stored: true, delivery: 'failed', inquiryId });
   }
+});
+
+app.post('/api/access/request', async (request, response) => {
+  const { name, organization, email } = request.body || {};
+  if (!name?.trim() || !organization?.trim() || !email?.trim()) {
+    return response.status(400).json({ error: 'Name, organization, and email are required.' });
+  }
+
+  const accessRequest = await createAccessRequest(name.trim(), organization.trim(), email.trim());
+  if (resend && process.env.CONTACT_TO_EMAIL && process.env.FROM_EMAIL) {
+    try {
+      await resend.emails.send({
+        from: process.env.FROM_EMAIL,
+        to: [process.env.CONTACT_TO_EMAIL],
+        replyTo: email.trim(),
+        subject: `Confidential access request: ${organization.trim()}`,
+        text: [
+          `Requester: ${name.trim()}`,
+          `Organization: ${organization.trim()}`,
+          `Email: ${email.trim()}`,
+          '',
+          `One-time access token: ${accessRequest.token}`,
+          'This token expires in 24 hours and can be used once.'
+        ].join('\n')
+      });
+    } catch (error) {
+      console.error('Access request notification failed:', error);
+    }
+  }
+
+  return response.status(202).json({ ok: true, requestId: accessRequest.id, message: 'Request received. Access is reviewed manually.' });
+});
+
+app.post('/api/access/verify', async (request, response) => {
+  const token = request.body?.token?.trim();
+  if (!token || !(await consumeAccessToken(token))) {
+    return response.status(401).json({ error: 'This access token is invalid, expired, or already used.' });
+  }
+  return response.json({ ok: true, authorized: true });
 });
 
 app.get('/api/admin/inquiries', async (request, response) => {

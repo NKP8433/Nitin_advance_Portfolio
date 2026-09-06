@@ -1144,15 +1144,27 @@ void main() {
 </div>
 <span class="material-symbols-outlined text-tertiary">admin_panel_settings</span>
 </div>
-<div class="flex flex-col sm:flex-row gap-unit-sm">
-<a class="flex-1 py-unit-sm bg-primary-container text-on-primary-container font-headline-sm text-headline-sm uppercase tracking-wider font-bold hover:bg-primary transition-all flex items-center justify-center gap-unit-xs" href="#contact" onclick="window.portfolioApp.closeAccessModal()">
+<form class="flex flex-col gap-unit-sm" id="access-request-form" onsubmit="window.portfolioApp.requestAccess(event)">
+<input class="w-full bg-surface-container border border-outline-variant/40 p-unit-sm text-on-surface focus:outline-none focus:border-tertiary font-body-md text-body-md" id="access-request-name" placeholder="Your full name" required type="text"/>
+<input class="w-full bg-surface-container border border-outline-variant/40 p-unit-sm text-on-surface focus:outline-none focus:border-tertiary font-body-md text-body-md" id="access-request-org" placeholder="Company / organization" required type="text"/>
+<input class="w-full bg-surface-container border border-outline-variant/40 p-unit-sm text-on-surface focus:outline-none focus:border-tertiary font-body-md text-body-md" id="access-request-email" placeholder="Your work email" required type="email"/>
+<button class="w-full py-unit-sm bg-primary-container text-on-primary-container font-headline-sm text-headline-sm uppercase tracking-wider font-bold hover:bg-primary transition-all flex items-center justify-center gap-unit-xs" type="submit" id="access-request-submit">
 <span class="material-symbols-outlined text-[20px]">mail</span>
-<span>Request via Contact Form</span>
-</a>
-<a class="flex-1 py-unit-sm bg-tertiary text-on-tertiary font-label-code text-label-code uppercase font-bold hover:bg-tertiary-fixed transition-all flex items-center justify-center gap-unit-xs" href="https://wa.me/918433564544?text=Hello%20Nitin%2C%20I%27d%20like%20to%20request%20confidential%20case%20study%20access." rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[18px]">chat</span>
-<span>Request via WhatsApp</span>
-</a>
+<span>Request Private Access</span>
+</button>
+</form>
+<div class="hidden p-unit-xs bg-surface-container-high text-tertiary font-label-code text-label-code" id="access-request-status"></div>
+<div class="pt-unit-xs text-center">
+<span class="font-label-code text-[10px] text-outline">Prefer WhatsApp?</span>
+<a class="font-label-code text-[10px] text-tertiary hover:text-on-surface uppercase" href="https://wa.me/918433564544?text=Hello%20Nitin%2C%20I%27d%20like%20to%20request%20confidential%20case%20study%20access." rel="noopener noreferrer" target="_blank">Send an access request</a>
+</div>
+<div class="flex flex-col gap-unit-xs pt-unit-sm border-t border-outline-variant/30">
+<label class="font-label-code text-label-code text-on-surface uppercase" for="access-token">Private token from Nitin</label>
+<div class="flex gap-unit-xs">
+<input class="min-w-0 flex-1 bg-surface-container border border-outline-variant/40 p-unit-sm text-on-surface uppercase tracking-widest focus:outline-none focus:border-secondary font-label-code text-label-code" id="access-token" placeholder="Enter token" type="text"/>
+<button class="px-unit-sm bg-tertiary text-on-tertiary font-label-code text-label-code uppercase font-bold hover:bg-tertiary-fixed transition-all" onclick="window.portfolioApp.verifyAccess(event)" type="button">Verify</button>
+</div>
+<div class="hidden p-unit-xs bg-error-container text-on-error-container font-label-code text-label-code" id="access-error-msg">TOKEN INVALID OR EXPIRED.</div>
 </div>
 </div>
 <div class="px-unit-lg py-unit-sm bg-surface-container-high border-t border-outline-variant/30 text-center font-label-code text-[11px] text-outline">
@@ -1621,6 +1633,69 @@ ENDCLASS.`,
         modal.classList.add('hidden');
         modal.classList.remove('flex');
       }
+    },
+
+    requestAccess: function(event) {
+      event.preventDefault();
+      const form = document.getElementById('access-request-form');
+      const button = document.getElementById('access-request-submit');
+      const status = document.getElementById('access-request-status');
+      const payload = {
+        name: document.getElementById('access-request-name').value.trim(),
+        organization: document.getElementById('access-request-org').value.trim(),
+        email: document.getElementById('access-request-email').value.trim()
+      };
+      if (button) {
+        button.disabled = true;
+        button.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Submitting Request...</span>';
+      }
+      fetch('/api/access/request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function(response) {
+        return response.json().then(function(data) {
+          if (!response.ok) throw new Error(data.error || 'Unable to submit access request.');
+          return data;
+        });
+      }).then(function(data) {
+        if (status) {
+          status.textContent = 'REQUEST RECEIVED. A PRIVATE TOKEN WILL BE SENT AFTER REVIEW.';
+          status.classList.remove('hidden');
+        }
+        if (form) form.reset();
+      }).catch(function(error) {
+        if (status) {
+          status.textContent = error.message;
+          status.classList.remove('hidden');
+        }
+      }).finally(function() {
+        if (button) {
+          button.disabled = false;
+          button.innerHTML = '<span class="material-symbols-outlined text-[20px]">mail</span><span>Request Private Access</span>';
+        }
+      });
+    },
+
+    verifyAccess: function(event) {
+      event.preventDefault();
+      const tokenInput = document.getElementById('access-token');
+      const error = document.getElementById('access-error-msg');
+      const token = tokenInput ? tokenInput.value.trim() : '';
+      fetch('/api/access/verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: token })
+      }).then(function(response) {
+        if (!response.ok) throw new Error('invalid');
+        return response.json();
+      }).then(function() {
+        if (error) error.classList.add('hidden');
+        window.portfolioApp.closeAccessModal();
+        window.portfolioApp.unlockCaseStudies();
+      }).catch(function() {
+        if (error) error.classList.remove('hidden');
+      });
     },
 
     unlockCaseStudies: function() {
